@@ -1,0 +1,30 @@
+
+
+<link rel="stylesheet" type="text/css" href="home/style.css">
+
+
+  <section>
+        <div class="circle"></div> <!-- Um círculo decorativo -->
+        <header>
+            <img src="home/img/logo.png" alt="" class="logo"><!-- Logo do NotionPet -->
+            <nav class="navegation">
+                <ul>
+                    <li><a href="/cadastro">Meus Dados</a></li> <!-- Link para a página do "Meus Dados" -->
+                    <li><a href="#">Meu Pet</a></li> <!-- Link para a página Meu Pet -->
+                    <li><a href="#">Saúde do Pet</a></li> <!-- Link para a página Saúde do Pet -->
+                    <li><a href="">Pesquisar</a></li> <!-- Link para a página de pesquisar -->
+                    <li><a  href="/contatos">Contato</a></li> <!-- Link para a página de contato -->
+                </ul>
+            </nav>
+        </header>
+        <div class="content">
+            <div class="text">
+                {{#if usuario}}
+                <h2>BEM VINDO <br><span>{{usuario.primeiroNome}}</span></h2> <!-- Título de boas-vindas com o nome do usuário -->
+                {{/if}}
+                <p>Com o NotionPet, você consegue cuidar do seu animal de estimação de maneira digital e rápida</p> <!-- Descrição do serviço NotionPet -->
+                <a href="#">SAIR DO SISTEMA</a> <!-- Link para sair do sistema -->
+            </div>
+        </div>  
+         
+    </section>

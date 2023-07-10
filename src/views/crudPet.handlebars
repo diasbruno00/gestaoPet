@@ -1,0 +1,165 @@
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="crudPet/css/style.css">
+
+<section class="py-5 my-5">
+		<div class="container">
+			<h1 class="mb-5">Configurações</h1>
+			<div class="bg-white shadow rounded-lg d-block d-sm-flex">
+				<div class="profile-tab-nav border-right">
+					<div class="p-4">
+						<div class="img-circle text-center mb-3">
+    						<img id="profile-img" src="crudPet/img/user2.jpg" alt="Image" class="shadow">
+    						
+    					</div>
+
+						<h4 class="text-center">Lucas Guimarães</h4>
+					</div>
+					<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+						<a class="nav-link" id="password-tab" data-toggle="pill" href="#password" role="tab" aria-controls="password" aria-selected="false">
+							<i class="fa fa-key text-center mr-1"></i> 
+							Meu Organizador
+						</a>
+						<a class="nav-link" id="security-tab" data-toggle="pill" href="#security" role="tab" aria-controls="security" aria-selected="false">
+							<i class="fa fa-user text-center mr-1"></i> 
+							Meus Pets
+						</a>
+						<a class="nav-link" id="application-tab" data-toggle="pill" href="#application" role="tab" aria-controls="application" aria-selected="false">
+							<i class="fa fa-tv text-center mr-1"></i> 
+							Voltar ao Inicio
+						</a>
+					</div>
+				</div>
+				<div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
+					<div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
+					</div>
+					<div class="tab-pane fade" id="password" role="tabpanel" aria-labelledby="password-tab">
+						<h3 class="mb-4">Meu Organizador</h3>
+						<div class="row">
+							<div class="col-md-3">
+								<div class="form-group">
+								  	<label>Data da próxima consulta</label>
+								  	<input type="text" class="form-control" value="26/06/2023">
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="form-group">
+								  	<label>Data da próxima Vacina</label>
+								  	<input type="text" class="form-control" value="01/07/2023">
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="form-group">
+								  	<label>Horário de Medicação Diária</label>
+								  	<input type="text" class="form-control" value="15h00">
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="form-group">
+								  	<label>Horário de Alimentação Diária</label>
+								  	<input type="text" class="form-control" value="08h30">
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="form-group">
+								  	<label>Frequência de Higiene</label>
+								  	<input type="text" class="form-control" value="Semanalmente">
+								</div>
+							</div>
+							<div class="col-md-10">
+								<div class="form-group">
+								  	<label>Cuidados Extras</label>
+								  	<input type="text" class="form-control" value="30">
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+								  	<label>Feedback da última consulta</label>
+									<textarea class="form-control" rows="4">Alimentação no horário certo e evitar ambientes frios.</textarea>
+								</div>
+							</div>
+						</div>
+						<div>
+							<button class="btn btn-warning">Cadastrar</button>
+							<button class="btn btn-primary">Atualizar</button>
+							<button class="btn btn-danger">Excluir</button>
+							<button class="btn btn-light">Trocar Pet</button>
+						</div>
+					</div>
+					<div class="tab-pane fade" id="security" role="tabpanel" aria-labelledby="security-tab">
+						<h3 class="mb-4">Configurações dos Meus Pets</h3>
+						<div class="img-circle text-center mb-3">
+							<img src="img/coelho.jpg" alt="Image" class="shadow">
+							   
+							</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+								  	<label>Nome</label>
+								  	<input type="text" class="form-control" value="Pituca">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+								  	<label>Idade</label>
+								  	<input type="text" class="form-control" value="2">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+								  	<label>Tipo</label>
+								  	<input type="text" class="form-control" value="Coelho">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+								  	<label>Raça</label>
+								  	<input type="text" class="form-control" value="Siberiano">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+								  	<label>Remédios</label>
+								  	<input type="text" class="form-control" value=" ">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+								  	<label>Vacina</label>
+								  	<input type="text" class="form-control" value=" ">
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+								  	<label>Alimentação</label>
+								  	<input type="text" class="form-control" value="Cenoura, ração, água">
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+										<label>Imagem do pet</label>
+									<input type="file" name="" id="" class="form-control">
+								</div>
+								</div>
+							<div class="col-md-12">
+								<div class="form-group">
+								  	<label>Observações Gerais</label>
+									<textarea class="form-control" rows="4">Dificuldade de comer</textarea>
+								</div>
+							</div>
+						</div>
+						<div>
+							<button class="btn btn-primary">Atualizar</button>
+							<button class="btn btn-warning">Cadastrar</button>
+							<button class="btn btn-danger">Excluir</button>
+							<button class="btn btn-light">Trocar Pet</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>

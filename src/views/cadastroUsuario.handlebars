@@ -1,0 +1,84 @@
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<section class="py-5 my-5">
+		<div class="container">
+			<h1 class="mb-5">Configurações</h1>
+			<div class="bg-white shadow rounded-lg d-block d-sm-flex">
+				<div class="profile-tab-nav border-right">
+
+					<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+						<a class="nav-link active" id="account-tab" data-toggle="pill" href="#account" role="tab" aria-controls="account" aria-selected="true">
+							<i class="fa fa-home text-center mr-1"></i> 
+							Usuário
+						</a>
+						<a class="nav-link" id="application-tab" data-toggle="pill" href="#application" role="tab" aria-controls="application" aria-selected="false">
+							<i class="fa fa-tv text-center mr-1"></i> 
+							Voltar ao Inicio
+						</a>
+					</div>
+				</div>
+				<div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
+					<div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
+						<h3 class="mb-4">Configurações</h3>
+
+                {{#each obj}}]
+                    <form action="/cadastro/{{chave}}" method="post">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+								  	<label>Primeiro Nome</label>
+								  	<input type="text" class="form-control" value="" name="nome">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+								  	<label>Sobrenome</label>
+								  	<input type="text" class="form-control" value=""  name="sobrenome">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+								  	<label>Email</label>
+								  	<input type="text" class="form-control" value="" name="email">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+								  	<label>Telefone</label>
+								  	<input type="text" class="form-control" value="" name="telefone">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+								  	<label>CPF / CNPJ</label>
+								  	<input type="text" class="form-control" value="" name="indentificador">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+								  	<label>Idade</label>
+								  	<input type="text" class="form-control" value="" name="idade">
+								</div>
+							</div>
+						
+							<div class="col-md-12">
+								<div class="form-group">
+								  	<label>Bio</label>
+									<textarea class="form-control" rows="4" name="bio"></textarea>
+								</div>
+							</div>
+							
+							
+						</div>
+						<div>
+							<button class="btn btn-warning" type="submit">Cadastrar</button>
+						</div>
+					</div>
+                    </form>
+					</div>
+				</div>
+			</div>
+		</div>
+        {{/each}}
+	</section>

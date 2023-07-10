@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+/* Importa a fonte 'Open Sans' do Google Fonts */
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* Define o box-sizing para border-box e zera o padding e a margem para todos os elementos */
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.5;
+}
+
+/* Define a fonte para o corpo do documento como 'Open Sans', uma fonte sans-serif, e define o line-height como 1.5 */
+
+.contact-bg{
+    height: 40vh;
+    background: url(image/contact-bg.jpg);
+
+    /* Define a altura para 40% da altura da viewport e define a imagem de fundo como 'contact-bg.jpg' */
+
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+    color: #fff;
+
+    /* Centraliza o conteúdo horizontalmente e define a cor do texto como branco */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Transforma o elemento .contact-bg em um contêiner flexível, centralizando o conteúdo vertical e horizontalmente */
+
+.contact-bg h3{
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+/* Define o tamanho da fonte para h3 como 1.3rem e o peso da fonte como 400 */
+
+.contact-bg h2{
+    font-size: 3rem;
+    text-transform: uppercase;
+    padding: 0.4rem 0;
+    letter-spacing: 4px;
+}
+
+/* Define o tamanho da fonte para h2 como 3rem, transforma o texto em maiúsculo, adiciona um espaçamento interno de 0.4rem na parte superior e inferior e define o espaçamento entre letras como 4px */
+
+.line div{
+    margin: 0 0.2rem;
+}
+
+/* Define a margem horizontal de 0.2rem para as divs dentro do elemento .line */
+
+.line div:nth-child(1),
+.line div:nth-child(3){
+    height: 3px;
+    width: 70px;
+    background: #854d8b;
+    border-radius: 5px;
+}
+
+/* Define a altura para 3px, largura para 70px, cor de fundo como #854d8b e bordas arredondadas com raio de 5px para as divs de primeira e terceira ordem dentro do elemento .line */
+
+/* Comentários no código */
+
+/* Estilo para uma linha que utiliza flexbox para alinhar os itens verticalmente */
+.line{
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo para o segundo elemento (div) dentro de .line */
+.line div:nth-child(2){
+    width: 10px;
+    height: 10px;
+    background: #854d8b;
+    border-radius: 50%;
+}
+
+/* Estilo para um texto com peso da fonte 300 e opacidade de 0.9 */
+.text{
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* Estilo para o texto dentro de .contact-bg */
+.contact-bg .text{
+    margin: 1.6rem 0;
+}
+
+/* Estilo para o corpo do contato */
+.contact-body{
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Estilo para informações de contato */
+.contact-info{
+    margin: 2rem 0;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+/* Estilo para o elemento <span> dentro de .contact-info */
+.contact-info span{
+    display: block;
+}
+
+/* Estilo para o elemento <div> dentro de .contact-info */
+.contact-info div{
+    margin: 0.8rem 0;
+    padding: 1rem;
+}
+
+/* Estilo para o elemento <span> dentro de .contact-info que contém a classe .fas */
+.contact-info span .fas{
+    font-size: 2rem;
+    padding-bottom: 0.9rem;
+    color: #854d8b;
+}
+
+.contact-info div span:nth-child(2){
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+/* Define o estilo para o segundo filho <span> dentro de <div class="contact-info"> */
+
+.contact-info .text{
+    padding-top: 0.4rem;
+}
+/* Define o espaçamento superior para elementos com a classe "text" dentro de <div class="contact-info"> */
+
+.contact-form{
+    padding: 2rem 0;
+    border-top: 1px solid #c7c7c7;
+}
+/* Define o espaçamento interno e a borda superior para elementos com a classe "contact-form" */
+
+.contact-form form{
+    padding-bottom: 1rem;
+}
+/* Define o espaçamento inferior para formulários dentro de elementos com a classe "contact-form" */
+
+.form-control{
+    width: 100%;
+    border: 1.5px solid #c7c7c7;
+    border-radius: 5px;
+    padding: 0.7rem;
+    margin: 0.6rem 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    outline: 0;
+}
+/* Define o estilo para elementos com a classe "form-control" usados em formulários */
+
+.form-control:focus{
+    box-shadow: 0 0 6px -3px rgba(48, 48, 48, 1);
+}
+/* Define a sombra ao receber foco para elementos com a classe "form-control" usados em formulários */
+
+.contact-form form div{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 0.6rem;
+}
+/* Define a exibição em grid e a estrutura de colunas para elementos <div> dentro de formulários em <div class="contact-form"> */
+
+.send-btn{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #fff;
+    background: #854d8b;
+    border: none;
+    border-radius: 5px;
+    padding: 0.7rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+/* Define o estilo para o botão de envio com a classe "send-btn" */
+
+.send-btn:hover{
+    opacity: 0.8;
+}
+/* Define o efeito de opacidade ao passar o mouse sobre o botão de envio com a classe "send-btn" */
+
+.contact-form > div img{
+    width: 85%;
+}
+/* Define a largura para imagens dentro de elementos <div> que são filhos diretos de <div class="contact-form"> */
+
+.contact-form > div{
+    margin: 0 auto;
+    text-align: center;
+}
+/* Define o espaçamento nas margens e o alinhamento centralizado para elementos <div> que são filhos diretos de <div class="contact-form"> */
+
+.contact-footer{
+    padding: 2rem 0;
+    background: #4682B4;
+}
+/* Define o espaçamento interno e o plano de fundo para elementos com a classe "contact-footer" */
+
+.contact-footer h3{
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.social-links{
+    display: flex;
+    justify-content: center;
+}
+.social-links a{
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.4rem;
+    transition: all 0.4s ease;
+}
+.social-links a:hover{
+    color: #854d8b;
+    border-color: #854d8b;
+}
+
+@media screen and (min-width: 768px){
+    .contact-bg .text{
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .contact-info{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 992px){
+    .contact-bg .text{
+        width: 50%;
+    }
+    .contact-form{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .contact-info{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
