@@ -12,11 +12,28 @@ const app = express()
 const porta = 5500
 const middlewares = new Middlewares()
 
+const MongoStore = require('connect-mongo')(session)
+
+const sessionOptions = session({
+    secret:'crud',
+    store: new MongoStore ({mongooseConnection: mongoose.connection}),
+    resave:false,
+    saveUninitialized: false,
+    cookie:{
+        maxAge:1000 * 60 * 60 * 24 * 7,
+        httpOnly: true
+    }
+})
+app.use(sessionOptions)
+
+/*
 app.use(session({
     secret: "crud",
     resave: true,
     saveUninitialized: true
 }))
+*/
+
 
 mongoose.connect('mongodb://localhost/pet')
 

@@ -6,6 +6,7 @@ class Middlewares {
       res.locals.alerta = req.flash("alerta");
       res.locals.logado = req.session.logado
       res.locals.usuario = req.session.usuario
+      res.locals.pet = req.session.pet
       next();
     };
 

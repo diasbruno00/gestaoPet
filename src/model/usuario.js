@@ -5,7 +5,7 @@ class Usuario {
         this.sobrenome = sobrenome
         this.email = email
         this.telefone = telefone
-        this.identificador = identificador
+        this.indentificador = identificador
         this.idade = idade
         this.bio = bio
         this.login = login

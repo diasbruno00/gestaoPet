@@ -14,7 +14,7 @@ const  { Schema } = require ('mongoose');
    telefone:{
     type: String
    },
-   identificador: {
+   indentificador: {
     type: String
    },
    idade:{

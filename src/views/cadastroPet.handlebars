@@ -1,0 +1,92 @@
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="crudPet/css/style.css">
+
+<section class="py-5 my-5">
+		<div class="container">
+			<h1 class="mb-5">Configurações</h1>
+			<div class="bg-white shadow rounded-lg d-block d-sm-flex">
+				<div class="profile-tab-nav border-right">
+					<div class="p-4">
+						<h4 class="text-center">{{usuario.primeiroNome}}</h4>
+					</div>
+					<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+						<a class="nav-link" id="security-tab" data-toggle="pill" href="#security" role="tab" aria-controls="security" aria-selected="false">
+							<i class="fa fa-user text-center mr-1"></i> 
+							Meus Pets
+						</a>
+						<a class="nav-link" id="application-tab" data-toggle="pill" href="#application" role="tab" aria-controls="application" aria-selected="false">
+							<i class="fa fa-tv text-center mr-1"></i> 
+							Voltar ao Inicio
+						</a>
+					</div>
+				</div>
+				
+					<div class="tab-pane fade" id="security" role="tabpanel" aria-labelledby="security-tab">
+						<h3 class="mb-4">Configurações dos Meus Pets</h3>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+								  	<label>Nome</label>
+								  	<input type="text" class="form-control" value="" >
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+								  	<label>Idade</label>
+								  	<input type="text" class="form-control" value="" >
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+								  	<label>Tipo</label>
+								  	<input type="text" class="form-control" value="">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+								  	<label>Raça</label>
+								  	<input type="text" class="form-control" value="">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+								  	<label>Remédios</label>
+								  	<input type="text" class="form-control" value=" ">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+								  	<label>Vacina</label>
+								  	<input type="text" class="form-control" value=" ">
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+								  	<label>Alimentação</label>
+								  	<input type="text" class="form-control" value="">
+								</div>
+							</div>
+		
+							<div class="col-md-12">
+								<div class="form-group">
+								  	<label>Observações Gerais</label>
+									<textarea class="form-control" rows="4"></textarea>
+								</div>
+							</div>
+						</div>
+						<div>
+							<button class="btn btn-primary">Atualizar</button>
+							<button class="btn btn-warning">Cadastrar</button>
+							<button class="btn btn-danger">Excluir</button>
+							<button class="btn btn-light">Trocar Pet</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>

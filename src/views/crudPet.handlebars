@@ -8,12 +8,7 @@
 			<div class="bg-white shadow rounded-lg d-block d-sm-flex">
 				<div class="profile-tab-nav border-right">
 					<div class="p-4">
-						<div class="img-circle text-center mb-3">
-    						<img id="profile-img" src="crudPet/img/user2.jpg" alt="Image" class="shadow">
-    						
-    					</div>
-
-						<h4 class="text-center">Lucas Guimarães</h4>
+						<h4 class="text-center">Olá, {{usuario.primeiroNome}}</h4>
 					</div>
 					<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 						<a class="nav-link" id="password-tab" data-toggle="pill" href="#password" role="tab" aria-controls="password" aria-selected="false">
@@ -30,127 +25,202 @@
 						</a>
 					</div>
 				</div>
-				<div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
+				
+						{{#if organizador }}
+						<div>
+							<div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
 					<div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
 					</div>
 					<div class="tab-pane fade" id="password" role="tabpanel" aria-labelledby="password-tab">
 						<h3 class="mb-4">Meu Organizador</h3>
+
+						<form action="/atualizar/organizador/pet" method="post">
 						<div class="row">
+
 							<div class="col-md-3">
 								<div class="form-group">
 								  	<label>Data da próxima consulta</label>
-								  	<input type="text" class="form-control" value="26/06/2023">
+								  	<input type="date" class="form-control" value="" name="consulta">
 								</div>
 							</div>
 							<div class="col-md-3">
+
 								<div class="form-group">
 								  	<label>Data da próxima Vacina</label>
-								  	<input type="text" class="form-control" value="01/07/2023">
+								  	<input type="date" class="form-control" value="" name="vacina">
 								</div>
 							</div>
 							<div class="col-md-3">
 								<div class="form-group">
 								  	<label>Horário de Medicação Diária</label>
-								  	<input type="text" class="form-control" value="15h00">
+								  	<input type="time" class="form-control" value="" name="medicacao">
 								</div>
 							</div>
 							<div class="col-md-3">
 								<div class="form-group">
 								  	<label>Horário de Alimentação Diária</label>
-								  	<input type="text" class="form-control" value="08h30">
+								  	<input type="time" class="form-control" value="" name="alimentacao">
 								</div>
 							</div>
 							<div class="col-md-3">
 								<div class="form-group">
 								  	<label>Frequência de Higiene</label>
-								  	<input type="text" class="form-control" value="Semanalmente">
+								  	<input type="text" class="form-control" value="" name="higiene">
 								</div>
 							</div>
 							<div class="col-md-10">
 								<div class="form-group">
 								  	<label>Cuidados Extras</label>
-								  	<input type="text" class="form-control" value="30">
+								  	<input type="text" class="form-control" value="" name="cuidadoExtras">
 								</div>
 							</div>
 							<div class="col-md-12">
 								<div class="form-group">
 								  	<label>Feedback da última consulta</label>
-									<textarea class="form-control" rows="4">Alimentação no horário certo e evitar ambientes frios.</textarea>
+									<textarea class="form-control" rows="4" name="feddback">Alimentação no horário certo e evitar ambientes frios.</textarea>
 								</div>
 							</div>
+							
+						<div class="col-md-12">
+								<div class="form-group">
+								  	<label>Nome do Pet</label>
+								  	<input type="text" class="form-control" value="" name="nomePet">
+								</div>
 						</div>
-						<div>
-							<button class="btn btn-warning">Cadastrar</button>
+						
+						</div>
 							<button class="btn btn-primary">Atualizar</button>
 							<button class="btn btn-danger">Excluir</button>
 							<button class="btn btn-light">Trocar Pet</button>
+					  </form>
+
 						</div>
+					{{else}}
+
+							<div>
+							<div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
+					<div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
 					</div>
+					<div class="tab-pane fade" id="password" role="tabpanel" aria-labelledby="password-tab">
+						<h3 class="mb-4">Meu Organizador</h3>
+						<form action="/salvar/organizador/pet" method="post">
+						<div class="row">
+							
+							<div class="col-md-3">
+								<div class="form-group">
+								  	<label>Data da próxima consulta</label>
+								  	<input type="date" class="form-control" value="" name="dataConsulta">
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="form-group">
+								  	<label>Data da próxima Vacina</label>
+								  	<input type="date" class="form-control" value="" name="dataVacina">
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="form-group">
+								  	<label>Horário de Medicação Diária</label>
+								  	<input type="time" class="form-control" value="" name="medicacao">
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="form-group">
+								  	<label>Horário de Alimentação Diária</label>
+								  	<input type="time" class="form-control" value="" name="horarioAlimentacao">
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="form-group">
+								  	<label>Frequência de Higiene</label>
+								  	<input type="text" class="form-control" value="" name="higiene">
+								</div>
+							</div>
+							<div class="col-md-10">
+								<div class="form-group">
+								  	<label>Cuidados Extras</label>
+								  	<input type="text" class="form-control" value="" name="cuidadoExtras">
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+								  	<label>Feedback da última consulta</label>
+									<textarea class="form-control" rows="4" name="feddback"></textarea>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-12">
+								<div class="form-group">
+								  	<label>Nome do Pet</label>
+								  	<input type="text" class="form-control" value="" name="nomePet">
+								</div>
+						</div>
+
+						<button class="btn btn-warning" type="submit">Cadastrar</button>
+                       </form>
+						{{/if}}
+
+					</div>
+
+
+{{#if pet}}
+					<form action="/atuatilizar/pet" method="post">
 					<div class="tab-pane fade" id="security" role="tabpanel" aria-labelledby="security-tab">
 						<h3 class="mb-4">Configurações dos Meus Pets</h3>
-						<div class="img-circle text-center mb-3">
-							<img src="img/coelho.jpg" alt="Image" class="shadow">
-							   
-							</div>
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
 								  	<label>Nome</label>
-								  	<input type="text" class="form-control" value="Pituca">
+								  	<input type="text" class="form-control" value="{{pet.nome}}" name="nome" >
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 								  	<label>Idade</label>
-								  	<input type="text" class="form-control" value="2">
+								  	<input type="text" class="form-control" value="{{pet.idade}}" name="idade">
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 								  	<label>Tipo</label>
-								  	<input type="text" class="form-control" value="Coelho">
+								  	<input type="text" class="form-control" value="{{pet.tipo}}" name="tipo">
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 								  	<label>Raça</label>
-								  	<input type="text" class="form-control" value="Siberiano">
+								  	<input type="text" class="form-control" value="{{pet.raca}}" name="raca">
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 								  	<label>Remédios</label>
-								  	<input type="text" class="form-control" value=" ">
+								  	<input type="text" class="form-control" value="{{pet.remedios}}" name="remedios">
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 								  	<label>Vacina</label>
-								  	<input type="text" class="form-control" value=" ">
+								  	<input type="text" class="form-control" value="{{pet.vacina}}" name="vacina">
 								</div>
 							</div>
 							<div class="col-md-12">
 								<div class="form-group">
 								  	<label>Alimentação</label>
-								  	<input type="text" class="form-control" value="Cenoura, ração, água">
+								  	<input type="text" class="form-control" value="{{pet.alimentacao}}" name="alimentacao">
 								</div>
 							</div>
-							<div class="col-md-12">
-								<div class="form-group">
-										<label>Imagem do pet</label>
-									<input type="file" name="" id="" class="form-control">
-								</div>
-								</div>
+		
 							<div class="col-md-12">
 								<div class="form-group">
 								  	<label>Observações Gerais</label>
-									<textarea class="form-control" rows="4">Dificuldade de comer</textarea>
+									<textarea class="form-control" rows="4" name="observacao">{{pet.observacao}}</textarea>
 								</div>
 							</div>
 						</div>
 						<div>
-							<button class="btn btn-primary">Atualizar</button>
-							<button class="btn btn-warning">Cadastrar</button>
+							<button class="btn btn-primary" type="submit">Atualizar</button>
 							<button class="btn btn-danger">Excluir</button>
 							<button class="btn btn-light">Trocar Pet</button>
 						</div>
@@ -159,6 +229,74 @@
 			</div>
 		</div>
 	</section>
+</form>
+
+	{{else}}
+
+	<form action="/salvar/pet/{{usuario._id}}" method="post">
+	<div class="tab-pane fade" id="security" role="tabpanel" aria-labelledby="security-tab">
+						<h3 class="mb-4">Configurações dos Meus Pets</h3>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+								  	<label>Nome</label>
+								  	<input type="text" class="form-control" value="" name="nome" >
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+								  	<label>Idade</label>
+								  	<input type="text" class="form-control" value="" name="idade">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+								  	<label>Tipo</label>
+								  	<input type="text" class="form-control" value="" name="tipo">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+								  	<label>Raça</label>
+								  	<input type="text" class="form-control" value="" name="raca">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+								  	<label>Remédios</label>
+								  	<input type="text" class="form-control" value=" " name="remedios">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+								  	<label>Vacina</label>
+								  	<input type="text" class="form-control" value=" " name="vacina">
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+								  	<label>Alimentação</label>
+								  	<input type="text" class="form-control" value="" name="alimentacao">
+								</div>
+							</div>
+		
+							<div class="col-md-12">
+								<div class="form-group">
+								  	<label>Observações Gerais</label>
+									<textarea class="form-control" rows="4" name="observacao"></textarea>
+								</div>
+							</div>
+						</div>
+						<div>
+							<button class="btn btn-warning" type="submit">Cadastrar</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</form>
+{{/if}}
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
