@@ -55,6 +55,6 @@ app.set('view engine','handlebars')   // carrega pagina handlebars
 app.use(rotas)
 
 app.listen(porta, ()=>{
-    console.log(`http://localhost:${porta}/`)
+    console.log(`http://localhost:${porta}/criar`)
     console.log(`servidor rodando na porta ${porta}`)
 })

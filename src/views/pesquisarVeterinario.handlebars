@@ -18,7 +18,8 @@
           class="search-input"
           id="search-input"
           name="pesquisar"
-          type="submit"          
+          type="submit"    
+          placeholder="Nome do Veterinario"      
         />
 
       </div>
@@ -30,12 +31,12 @@
 <table class="table my-2 ">
     <tr class="table-warning" >
       <th class="text-center" scope="col">Nome </th>
-      <th class="text-center" scope="col">idade</th>
-      <th class="text-center" scope="col">email</th>
-      <th class="text-center" scope="col">telefone</th>
-      <th  class="text-center" scope="col">crmv</th>
-      <th class="text-center" scope="col">consultorio</th>
-      <th class="text-center" scope="col">detalhes</th>
+      <th class="text-center" scope="col">Idade</th>
+      <th class="text-center" scope="col">Email</th>
+      <th class="text-center" scope="col">Telefone</th>
+      <th  class="text-center" scope="col">CRMV</th>
+      <th class="text-center" scope="col">Consultorio</th>
+      <th class="text-center" scope="col">Detalhes</th>
    
 
     </tr>
@@ -48,12 +49,12 @@
         <td class="text-center"> {{idade}}  </td> 
         <td class="text-center"> {{email}}  </td> 
         <td class="text-center"> {{telefone}}</tdclass=> 
-        <td class="text-center"> {{CRMV}}  </td> 
+        <td class="text-center"> {{crmv}}  </td> 
         <td class="text-center"> {{consultorio}} </td> 
         <td class="text-center"> {{detalhes}}  </td> 
         
-        <td class="text-center"> <a href="/edicao/organizador/{{_id}}"> editar </a></td> 
-        <td class="text-center"> <a class="text-danger" href="/excluir/veterinario/{{_id}}">Excluir</a></td>
+        <td class="text-center"> <a href="/edicao/veterinario/{{_id}}"> <span class="material-symbols-outlined">edit</span></a></td> 
+        <td class="text-center"> <a class="text-danger" href="/excluir/veterinario/{{_id}}"><span class="material-symbols-outlined">delete</span></a></td>
       </tr>
      {{/each}}
     </tbody>

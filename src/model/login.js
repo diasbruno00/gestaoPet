@@ -4,8 +4,13 @@
     constructor(email, senha){
         this._email = email
         this._senha  = senha
-
+    
     }
+
+    verificandoSenhas(senha1, senha2){
+        if( senha1 === senha2 ) return true
+    }
+    
     get email(){
         return this._email
     }

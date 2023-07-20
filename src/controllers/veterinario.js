@@ -9,7 +9,7 @@ class ControllerVeterinario {
   };
 
   salvarDadosVeterinario = (req, res) => {
-    const { nome, idade, email, telefone, crmv, consultorio, detalhe } =
+    const { nome, idade, email, telefone, crmv, consultorio, detalhes } =
       req.body;
     const veterinario = new Veterinario(
       nome,
@@ -18,7 +18,7 @@ class ControllerVeterinario {
       telefone,
       crmv,
       consultorio,
-      detalhe
+      detalhes
     );
 
     VeterinarioDao.create(veterinario);
@@ -28,7 +28,7 @@ class ControllerVeterinario {
   };
 
   renderizarPaginaPesquisaVeterinario = async (req, res) => {
-    const nome = req.quer.pesquisar;
+    const nome = req.query.pesquisar;
     if (!nome) {
       const lista = await VeterinarioDao.find();
       res.render("pesquisarVeterinario", { lista });
@@ -45,6 +45,38 @@ class ControllerVeterinario {
 
     req.flash("sucesso", "Veterinario excluido com sucesso");
     res.redirect("back");
+  };
+
+  renderizarPaginaEditarVet = async (req, res) => {
+    const id = req.params.id;
+    const vet = await VeterinarioDao.findById({ _id: id });
+    res.render("editarVeterinario", { vet });
+  };
+
+  atualizarVeterinario = async (req, res) => {
+    const id = req.params.id;
+
+    const { nome, idade, email, telefone, crmv, consultorio, detalhes } =
+      req.body;
+    const veterinario = new Veterinario(
+      nome,
+      idade,
+      email,
+      telefone,
+      crmv,
+      consultorio,
+      detalhes
+    );
+    const veterinarioAtualizado = await VeterinarioDao.findByIdAndUpdate(
+      id,
+      veterinario,
+      {
+        new: true,
+      }
+    );
+
+    req.flash("sucesso", "Dados atualizados com sucesso")
+    res.redirect("/pesquisa/veterinario")
   };
 }
 

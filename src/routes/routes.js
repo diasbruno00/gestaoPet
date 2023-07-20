@@ -5,25 +5,25 @@ const ControllerUsuario = require("../controllers/usuario");
 const ControllerPet = require("../controllers/pet");
 const ControllerOrganizador = require("../controllers/organizador");
 const ControllerVeterinario = require("../controllers/veterinario");
-const ControllerPesquisar = require("../controllers/pesquisar")
+const ControllerContato = require("../controllers/contato");
 
 const controllerLogin = new ControllerLogin();
 const controllerUsuario = new ControllerUsuario();
 const controllerPet = new ControllerPet();
 const controllerOganizador = new ControllerOrganizador();
 const controllerVeterinario = new ControllerVeterinario();
-const controllerPesquisar = new ControllerPesquisar()
+const controllerContato = new ControllerContato()
 
+// rota home
 router.get("/principal/", (req, res) => {
   res.render("homeView");
 });
 
-router.get("/contatos", (req, res) => {
-  res.render("contato");
-});
+// rota contatos
+router.get("/contatos", controllerContato.renderizarPaginaContato);
+router.post("/contatos", controllerContato.salvarDadosContatos)
 
-router.get("/pesquisar", controllerPesquisar.renderizarPaginaPesquisa );
-
+// rota login
 router.get("/criar", controllerLogin.renderizarPaginaCriarLogin);
 router.post("/criar", controllerLogin.salvarDadosLogin);
 
@@ -31,7 +31,6 @@ router.get("/login", controllerLogin.renderizarPaginaRealizarLogin);
 router.post("/login", controllerLogin.recuperarDadosLogin);
 
 // rotas usuarios
-
 router.get("/cadastro/:id", controllerUsuario.renderizarPaginaCadastro);
 router.get("/lista/usuario/", controllerUsuario.listarUsuarioCadastrado);
 router.post("/cadastro/:id", controllerUsuario.salvarDadosUsuario);
@@ -44,6 +43,8 @@ router.post("/atualizar/pet/:id", controllerPet.atualizarDadosPet);
 router.get("/deletar/pet/:id", controllerPet.deletarPet);
 router.get("/pet", controllerPet.renderizarPaginaCadastroPet);
 router.get("/edicao/pet/:id",controllerPet.renderizarPaginaEditarPet)
+router.get("/pesquisar", controllerPet.renderizarPaginaPesquisa );
+
 
 //rotas Organizador
 router.post("/salvar/organizador/pet", controllerOganizador.salvarDadosOrganizador);
@@ -57,5 +58,7 @@ router.get("/veterinario",controllerVeterinario.renderizarPaginaCadastroVeterina
 router.post("/veterinario", controllerVeterinario.salvarDadosVeterinario);
 router.get("/pesquisa/veterinario", controllerVeterinario.renderizarPaginaPesquisaVeterinario)
 router.get("/excluir/veterinario/:id",controllerVeterinario.excluirVeterinario)
+router.get('/edicao/veterinario/:id',controllerVeterinario.renderizarPaginaEditarVet)
+router.post("/atualizar/veterinario/:id", controllerVeterinario.atualizarVeterinario)
 
 module.exports = router;

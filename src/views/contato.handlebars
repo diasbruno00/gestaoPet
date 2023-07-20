@@ -41,18 +41,18 @@
         </div>
 
         <div class="contact-form">
-          <form>
+          <form method="post" action="/contatos">
             <div>
-              <input type="text" class="form-control" placeholder="Primeiro Nome">
-              <input type="text" class="form-control" placeholder="Sobrenome">
+              <input type="text" class="form-control" placeholder="Primeiro Nome" name="nome">
+              <input type="text" class="form-control" placeholder="Sobrenome" name="sobrenome">
             </div>
             <div>
-              <input type="email" class="form-control" placeholder="E-mail">
-              <input type="text" class="form-control" placeholder="Telefone">
+              <input type="email" class="form-control" placeholder="E-mail" name="email">
+              <input type="text" class="form-control" placeholder="Telefone" name="telefone">
             </div>
-            <textarea rows="5" placeholder="Mensagem" class="form-control"></textarea>
-            <input type="submit" class="send-btn" value="enviar mensagem">
-            <input type="submit" class="send-btn" value="Voltar ao inicio">
+            <textarea rows="5" placeholder="Mensagem" class="form-control" name="mensagem"></textarea>
+            <button type="submit" class="send-btn" > Enviar Mensagem </button>
+            <button class="send-btn"> <a href="/principal/"> Voltar ao inicio </a> </button> 
           </form>
 
           <div>

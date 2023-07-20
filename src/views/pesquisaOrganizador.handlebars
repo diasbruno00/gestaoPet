@@ -19,6 +19,7 @@
           id="search-input"
           name="pesquisar"
           type="submit"          
+          placeholder="Nome do pet"
         />
 
       </div>
@@ -30,13 +31,13 @@
     <tr class="table-warning" >
       <th class="text-center" scope="col">Nome do Pet</th>
       <th class="text-center" scope="col">Nome do veterinario</th>
-      <th class="text-center" scope="col">data da Consulta</th>
-      <th class="text-center" scope="col">data da Vacina</th>
-      <th  class="text-center" scope="col">medicação</th>
+      <th class="text-center" scope="col">Data da Consulta</th>
+      <th class="text-center" scope="col">Data da Vacina</th>
+      <th  class="text-center" scope="col">Medicação</th>
       <th class="text-center" scope="col">Horario Alimentação</th>
-      <th class="text-center" scope="col">higiene</th>
+      <th class="text-center" scope="col">Higiene</th>
       <th class="text-center" scope="col">Cuidados Extras</th>
-      <th class="text-center" scope="col">feddback</th>
+      <th class="text-center" scope="col">Feddback</th>
 
     </tr>
   </thead>
@@ -53,8 +54,8 @@
         <td class="text-center"> {{higiene}}  </td> 
         <td class="text-center"> {{cuidadosExtras}}  </td> 
         <td class="text-center"> {{feddback}}  </td> 
-        <td class="text-center"> <a href="/edicao/organizador/{{_id}}"> editar </a></td> 
-        <td class="text-center"> <a class="text-danger" href="/excluir/organizador/{{_id}}">Excluir</a></td>
+        <td class="text-center"> <a href="/edicao/organizador/{{_id}}"> <span class="material-symbols-outlined">edit</span></a></td> 
+        <td class="text-center"> <a class="text-danger" href="/excluir/organizador/{{_id}}"><span class="material-symbols-outlined">delete</span> </a></td>
       </tr>
      {{/each}}
     </tbody>

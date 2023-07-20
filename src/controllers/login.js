@@ -2,7 +2,6 @@ const LoginDao = require("../database/loginDao");
 const Login = require("../model/login");
 
 class ControllerLogin {
-  
   constructor() {}
 
   renderizarPaginaCriarLogin = (req, res) => {
@@ -17,7 +16,7 @@ class ControllerLogin {
   };
 
   salvarDadosLogin = async (req, res) => {
-    const { email, senha } = req.body;
+    const { email, senha, confirmarSenha } = req.body;
     // buscando por um email especifico
     let emailExiste = await LoginDao.findOne({ email });
 
@@ -27,16 +26,23 @@ class ControllerLogin {
     } else {
       const login = new Login(email, senha);
 
-      const dados = await LoginDao.create({
-        email: login.email,
-        senha: login.senha,
-      });
+      const iguais = login.verificandoSenhas(senha, confirmarSenha);
 
-      console.log(dados)
-      const id = dados._id;
+      if (iguais) {
+        
+        const dados = await LoginDao.create({
+          email: login.email,
+          senha: login.senha,
+        });
+  
+        const id = dados._id;
 
-      req.flash("sucesso", `Ola, Realize seu cadastro`);
-      res.redirect(`/cadastro/${id}`);
+        req.flash("sucesso", `Ola, Realize seu cadastro`);
+        res.redirect(`/cadastro/${id}`);
+      } else {
+        req.flash("erro", `Senhas não sao iguais`);
+        res.redirect("back");
+      }
     }
   };
 
