@@ -1,0 +1,65 @@
+<link rel="stylesheet" href="/pesquisa/style.css" />
+<link rel="stylesheet" href="/pesquisa/search-box.css" />
+
+<section>
+  <main>
+    <div class="content">
+      <div class="text">
+        <h3>Procure na sua Agenda</h3>
+        <!-- Descrição do serviço NotionPet -->
+      </div>
+    </div>
+
+    <form class="d-flex" role="search" method="get">
+      <div class="search-container">
+        <label for="search-input" class="search-icon"></label>
+        <input
+          type="text"
+          class="search-input"
+          id="search-input"
+          name="pesquisar"
+          type="submit"          
+        />
+
+      </div>
+    </form>
+  </main>
+
+  <div class="responsive-table">
+<table class="table my-2 ">
+    <tr class="table-warning" >
+      <th class="text-center" scope="col">Nome do Pet</th>
+      <th class="text-center" scope="col">Nome do veterinario</th>
+      <th class="text-center" scope="col">data da Consulta</th>
+      <th class="text-center" scope="col">data da Vacina</th>
+      <th  class="text-center" scope="col">medicação</th>
+      <th class="text-center" scope="col">Horario Alimentação</th>
+      <th class="text-center" scope="col">higiene</th>
+      <th class="text-center" scope="col">Cuidados Extras</th>
+      <th class="text-center" scope="col">feddback</th>
+
+    </tr>
+  </thead>
+  <tbody>
+     {{#each lista}}
+     <tbody>
+       <tr>
+        <td class="text-center"> {{nomePet}}  </td> 
+        <td class="text-center"> {{nomeVeterinario}}  </td> 
+        <td class="text-center"> {{dataConsulta}}  </td> 
+        <td class="text-center"> {{dataVacina}}</tdclass=> 
+        <td class="text-center"> {{medicacao}}  </td> 
+        <td class="text-center"> {{horarioAlimentacao}} </td> 
+        <td class="text-center"> {{higiene}}  </td> 
+        <td class="text-center"> {{cuidadosExtras}}  </td> 
+        <td class="text-center"> {{feddback}}  </td> 
+        <td class="text-center"> <a href="/edicao/organizador/{{_id}}"> editar </a></td> 
+        <td class="text-center"> <a class="text-danger" href="/excluir/organizador/{{_id}}">Excluir</a></td>
+      </tr>
+     {{/each}}
+    </tbody>
+</table>
+
+
+</section>
+

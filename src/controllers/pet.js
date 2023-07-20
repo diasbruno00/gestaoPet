@@ -36,7 +36,7 @@ class ControllerPet {
     );
 
     const resposta = await PetDao.create(pet);
-    console.log(resposta)
+    console.log(resposta);
 
     req.session.pet = resposta;
 
@@ -47,7 +47,6 @@ class ControllerPet {
   };
 
   atualizarDadosPet = async (req, res) => {
-    
     const id = req.params.id;
 
     const {
@@ -80,22 +79,31 @@ class ControllerPet {
     req.session.pet = novoPet;
 
     req.flash("sucesso", `Os dados do pet ${nome} foram salvo com sucesso`);
-    res.redirect("/principal/");
+    res.redirect("/pesquisar");
   };
 
-  deletarPet = async (req, res) =>{
+  deletarPet = async (req, res) => {
+    const id = req.params.id;
 
-    const id = req.params.id
-    
-    const petExcluido = await PetDao.findOneAndDelete({_id: id})
-    req.session.pet = ''
-    req.flash('sucesso',"Pet excluido com sucesso") 
-    res.redirect('back')
+    const petExcluido = await PetDao.findOneAndDelete({ _id: id });
+    req.session.pet = "";
+    req.flash("sucesso", "Pet excluido com sucesso");
+    res.redirect("back");
+  };
+  renderizarPaginaCadastroPet = (req, res) => {
+    res.render("cadastroPet");
+  };
 
-  }
-  renderizarPaginaCadastroPet = ( req, res) => {
-    res.render('cadastroPet')
-  }
+  renderizarPaginaEditarPet = async (req, res) => {
+    const id = req.params.id;
+
+    try {
+      const pet = await PetDao.findById({ _id: id });
+      res.render("crudPet", { pet });
+    } catch (e) {
+      console.log(e);
+    }
+  };
 }
 
 module.exports = ControllerPet;

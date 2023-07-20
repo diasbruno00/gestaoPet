@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="/pesquisa/style.css" />
+<link rel="stylesheet" href="/pesquisa/search-box.css" />
+
+<section>
+  <main>
+    <div class="content">
+      <div class="text">
+        <h3>Procure o Veterinario</h3>
+        <!-- Descrição do serviço NotionPet -->
+      </div>
+    </div>
+
+    <form class="d-flex" role="search" method="get">
+      <div class="search-container">
+        <label for="search-input" class="search-icon"></label>
+        <input
+          type="text"
+          class="search-input"
+          id="search-input"
+          name="pesquisar"
+          type="submit"          
+        />
+
+      </div>
+    </form>
+  </main>
+
+   
+  <div class="responsive-table">
+<table class="table my-2 ">
+    <tr class="table-warning" >
+      <th class="text-center" scope="col">Nome </th>
+      <th class="text-center" scope="col">idade</th>
+      <th class="text-center" scope="col">email</th>
+      <th class="text-center" scope="col">telefone</th>
+      <th  class="text-center" scope="col">crmv</th>
+      <th class="text-center" scope="col">consultorio</th>
+      <th class="text-center" scope="col">detalhes</th>
+   
+
+    </tr>
+  </thead>
+  <tbody>
+     {{#each lista}}
+     <tbody>
+       <tr>
+        <td class="text-center"> {{nome}}  </td> 
+        <td class="text-center"> {{idade}}  </td> 
+        <td class="text-center"> {{email}}  </td> 
+        <td class="text-center"> {{telefone}}</tdclass=> 
+        <td class="text-center"> {{CRMV}}  </td> 
+        <td class="text-center"> {{consultorio}} </td> 
+        <td class="text-center"> {{detalhes}}  </td> 
+        
+        <td class="text-center"> <a href="/edicao/organizador/{{_id}}"> editar </a></td> 
+        <td class="text-center"> <a class="text-danger" href="/excluir/veterinario/{{_id}}">Excluir</a></td>
+      </tr>
+     {{/each}}
+    </tbody>
+</table>
+
+
+</section>
+

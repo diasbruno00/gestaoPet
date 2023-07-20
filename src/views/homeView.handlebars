@@ -1,28 +1,82 @@
-<link rel="stylesheet" href="/home/style.css">
+<link rel="stylesheet" href="/home/style.css" />
 
+<section>
+  <div class="circle"></div>
+  <!-- Um círculo decorativo -->
+  <header>
 
- <section>
-        <div class="circle"></div> <!-- Um círculo decorativo -->
-        <header>
-            <img src="home/img/logo.png" alt="" class="logo"><!-- Logo do NotionPet -->
-            <nav class="navegation">
-                <ul>
-                    <li><a href="/lista/usuario/">Meus Dados</a></li> <!-- Link para a página do "Meus Dados" -->
-                    <li><a href="/pet">Meu Pet </a></li> <!-- Link para a página Meu Pet -->
-                    <li><a href="/veterinario">Saúde do Pet</a></li> <!-- Link para a página Saúde do Pet -->
-                    <li><a href="/pesquisar">Pesquisar</a></li> <!-- Link para a página de pesquisar -->
-                    <li><a  href="/contatos">Contato</a></li> <!-- Link para a página de contato -->
-                </ul>
-            </nav>
-        </header>
-        <div class="content">
-            <div class="text">
-                {{#if usuario}}
-                <h2>BEM VINDO <br><span>{{usuario.primeiroNome}}</span></h2> <!-- Título de boas-vindas com o nome do usuário -->
-                {{/if}}
-                <p>Com o NotionPet, você consegue cuidar do seu animal de estimação de maneira digital e rápida</p> <!-- Descrição do serviço NotionPet -->
-                <a href="#">SAIR DO SISTEMA</a> <!-- Link para sair do sistema -->
-            </div>
-        </div>  
-         
-    </section>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/lista/usuario/"
+              >Meus Dados</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/pet">Meu Pet</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/veterinario">Saude do Pet</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Pesquisar
+              </a>
+              <ul
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+                <li><a class="dropdown-item" href="/pesquisar">Pesquisar Pet</a></li>
+                <li><a
+                    class="dropdown-item"
+                    href="/pesquisar/organizador"
+                  >Pesquisar Organizador</a></li>
+                <li><a class="dropdown-item" href="/pesquisa/veterinario">Pesquisar Veterinario</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contatos">Contato</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  </header>
+  <div class="content">
+    <div class="text">
+      {{#if usuario}}
+        <h2>BEM VINDO <br /><span>{{usuario.primeiroNome}}</span></h2>
+        <!-- Título de boas-vindas com o nome do usuário -->
+      {{/if}}
+      <p>Com o NotionPet, você consegue cuidar do seu animal de estimação de
+        maneira digital e rápida</p>
+      <!-- Descrição do serviço NotionPet -->
+      <a href="#">SAIR DO SISTEMA</a>
+      <!-- Link para sair do sistema -->
+    </div>
+  </div>
+
+</section>

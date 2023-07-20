@@ -1,0 +1,95 @@
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="crudPet/css/style.css">
+
+<section class="py-5 my-5">
+		<div class="container">
+			<h1 class="mb-5">Configurações</h1>
+			<div class="bg-white shadow rounded-lg d-block d-sm-flex">
+				<div class="profile-tab-nav border-right">
+					<div class="p-4">
+						<h4 class="text-center">Olá, {{usuario.primeiroNome}}</h4>
+					</div>
+					<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+						<a class="nav-link" id="password-tab" data-toggle="pill" href="#password" role="tab" aria-controls="password" aria-selected="false">
+							<i class="fa fa-key text-center mr-1"></i> 
+							Meu Organizador
+						</a>
+						<a class="nav-link" id="application-tab" data-toggle="pill" href="/principal/" role="tab" aria-controls="application" aria-selected="false">
+							<i class="fa fa-tv text-center mr-1"></i> 
+							Voltar ao Inicio
+						</a>
+					</div>
+				</div>
+				
+				<div>
+				<div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
+					<div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
+					</div>
+					<div class="tab-pane fade" id="password" role="tabpanel" aria-labelledby="password-tab">
+						<h3 class="mb-4">Meu Organizador</h3>
+						<form action="/atualizar/organizador/{{organizador._id}}" method="post">
+						<div class="row">
+						<div class="col-md-12">
+								<div class="form-group">
+								  	<label>Nome do Pet</label>
+								  	<input type="text" class="form-control" value="{{organizador.nomePet}}" name="nomePet">
+								</div>
+						</div>
+							<div class="col-md-12">
+								<div class="form-group">
+								  	<label>Nome do Veterinario</label>
+								  	<input type="text" class="form-control" value="{{organizador.nomeVeterinario}}" name="nomeVeterinario">
+								</div>
+						</div>
+							<div class="col-md-3">
+								<div class="form-group">
+								  	<label>Data da próxima consulta</label>
+								  	<input type="date" class="form-control" value="{{organizador.dataConsulta}}" name="dataConsulta">
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="form-group">
+								  	<label>Data da próxima Vacina</label>
+								  	<input type="date" class="form-control" value="{{organizador.dataVacina}}" name="dataVacina">
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="form-group">
+								  	<label>Horário de Medicação Diária</label>
+								  	<input type="time" class="form-control" value="{{organizador.medicacao}}" name="medicacao">
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="form-group">
+								  	<label>Horário de Alimentação Diária</label>
+								  	<input type="time" class="form-control" value="{{organizador.horarioAlimentacao}}" name="horarioAlimentacao">
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="form-group">
+								  	<label>Frequência de Higiene</label>
+								  	<input type="text" class="form-control" value="{{organizador.higiene}}" name="higiene">
+								</div>
+							</div>
+							<div class="col-md-10">
+								<div class="form-group">
+								  	<label>Cuidados Extras</label>
+								  	<input type="text" class="form-control" value="{{organizador.cuidadoExtras}}" name="cuidadoExtras">
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+								  	<label>Feedback da última consulta</label>
+									<textarea class="form-control" rows="4" name="feddback">{{organizador.feddback}}</textarea>
+								</div>
+							</div>
+						</div>
+						<button class="btn btn-primary" type="submit">Atualizar</button>
+                       </form>
+					</div>
+
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>

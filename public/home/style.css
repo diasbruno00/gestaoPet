@@ -1,169 +1,194 @@
 /* Importa a fonte Poppins do Google Fonts */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
 
 /* Configurações gerais */
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 /* Estilização da seção */
 
 section {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    padding: 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #d9d9d9;
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #d9d9d9;
+  overflow: hidden;
 }
 
 /* Estilização do círculo de fundo */
 
 .circle {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #F0E68C;
-    clip-path: circle(50% at bottom right); /* Define uma forma de círculo no canto inferior direito */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f0e68c;
+  clip-path: circle(
+    50% at bottom right
+  ); /* Define uma forma de círculo no canto inferior direito */
 }
 
 /* Estilização do cabeçalho */
 
+/*
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0px 0px;
+  display: inline-block;
+  align-items: center;
+  justify-content: space-between;
+}
+*/
+
 header {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 50%; /* Move o cabeçalho para o centro da largura da tela */
+    transform: translateX(-50%); /* Centraliza horizontalmente */
     width: 100%;
-    padding: 40px 100px;
-    display: flex;
+    padding: 0px 0px;
     align-items: center;
     justify-content: space-between;
+  }
+
+.navbar-nav .nav-item {
+    margin-right: 200px; /* Adiciona 10px de espaço entre os botões */
 }
 
 /* Estilização do logotipo no cabeçalho */
 
 header .logo {
-    position: relative;
-    max-width: 150px;
+  position: relative;
+  max-width: 150px;
 }
 
-header .navegation ul{
-    position: relative; /* Posição relativa para permitir posicionamento absoluto dos itens filhos */
-    display: flex; /* Exibir os itens da lista em uma linha */
+header .navegation ul {
+  position: relative; /* Posição relativa para permitir posicionamento absoluto dos itens filhos */
+  display: flex; /* Exibir os itens da lista em uma linha */
 }
 
-header .navegation li{
-    list-style: none; /* Remover os marcadores de lista */
+header .navegation li {
+  list-style: none; /* Remover os marcadores de lista */
 }
 
-header .navegation li a{
-    display: inline-block; /* Exibir os links em linha */
-    color: #000; /* Cor do texto */
-    font-weight: 500; /* Peso da fonte */
-    text-decoration: none; /* Remover decoração do texto (sublinhado, etc.) */
-    font-size: 19px; /* Tamanho da fonte */
-    margin-left: 100px; /* Espaçamento à esquerda */
+header .navegation li a {
+  display: inline-block; /* Exibir os links em linha */
+  color: #000; /* Cor do texto */
+  font-weight: 500; /* Peso da fonte */
+  text-decoration: none; /* Remover decoração do texto (sublinhado, etc.) */
+  font-size: 19px; /* Tamanho da fonte */
+  margin-left: 100px; /* Espaçamento à esquerda */
 }
 
-.content{
-    position: relative; /* Posição relativa para permitir posicionamento absoluto dos elementos filhos */
-    width: 100%; /* Largura total */
-    display: flex; /* Exibir os elementos em linha */
-    align-items: center; /* Alinhar verticalmente no centro */
-    justify-content: space-between; /* Distribuir o espaço disponível igualmente entre os elementos */
+.content {
+  position: relative; /* Posição relativa para permitir posicionamento absoluto dos elementos filhos */
+  width: 100%; /* Largura total */
+  display: flex; /* Exibir os elementos em linha */
+  align-items: center; /* Alinhar verticalmente no centro */
+  justify-content: space-between; /* Distribuir o espaço disponível igualmente entre os elementos */
 }
 
-.content .text{
-    position: relative; /* Posição relativa para permitir posicionamento absoluto dos elementos filhos */
-    max-width: 600px; /* Largura máxima do texto */
-    margin-right: 20px; /* Espaçamento à direita */
+.content .text {
+  position: relative; /* Posição relativa para permitir posicionamento absoluto dos elementos filhos */
+  max-width: 600px; /* Largura máxima do texto */
+  margin-right: 20px; /* Espaçamento à direita */
 }
 
-.content .text h2{
-    color: #000; /* Cor do texto */
-    font-size: 3em; /* Tamanho da fonte */
-    margin-bottom: 10px; /* Espaçamento inferior */
-    line-height: 2.5em; /* Altura da linha */
-    font-weight: 700; /* Peso da fonte */
+.content .text h2 {
+  color: #000; /* Cor do texto */
+  font-size: 3em; /* Tamanho da fonte */
+  margin-bottom: 10px; /* Espaçamento inferior */
+  line-height: 2.5em; /* Altura da linha */
+  font-weight: 700; /* Peso da fonte */
 }
 
-.content .text h2 span{
-    font-size: 3.5em; /* Tamanho da fonte */
-    color: #F0E68C; /* Cor do texto */
+.content .text h2 span {
+  font-size: 3.5em; /* Tamanho da fonte */
+  color: #f0e68c; /* Cor do texto */
 }
 
-.content .text p{
-    color: #000; /* Cor do texto */
+.content .text p {
+  color: #000; /* Cor do texto */
 }
 
-.content .text a{
-    display: inline-block; /* Define o elemento como um bloco de nível inline */
-    margin-top: 50px; /* Define a margem superior como 50 pixels */
-    padding: 10px 25px; /* Define o preenchimento interno de 10 pixels na vertical e 25 pixels na horizontal */
-    background: #F0E68C; /* Define o fundo com a cor #F0E68C */
-    color: #000; /* Define a cor do texto como preto */
-    font-weight: 500; /* Define a espessura da fonte como 500 */
-    letter-spacing: 1px; /* Define o espaçamento entre caracteres como 1 pixel */
-    text-decoration: none; /* Remove a decoração de texto /
+.content .text a {
+  display: inline-block; /* Define o elemento como um bloco de nível inline */
+  margin-top: 50px; /* Define a margem superior como 50 pixels */
+  padding: 10px 25px; /* Define o preenchimento interno de 10 pixels na vertical e 25 pixels na horizontal */
+  background: #f0e68c; /* Define o fundo com a cor #F0E68C */
+  color: #000; /* Define a cor do texto como preto */
+  font-weight: 500; /* Define a espessura da fonte como 500 */
+  letter-spacing: 1px; /* Define o espaçamento entre caracteres como 1 pixel */
+  text-decoration: none; /* Remove a decoração de texto /
     border-radius: 40px; /* Define o raio de borda como 40 pixels, criando bordas arredondadas */
-    transition: 0.3s ease-in-out; /* Adiciona uma transição suave com duração de 0.3 segundos */
-    }
-    
-    .content .text a:hover{
-    transform: translateY(-10px); /* Aplica uma transformação de translação vertical de -10 pixels ao elemento ao passar o mouse por cima */
-    }
-    
-    .icons{
-    position: absolute; /* Define a posição como absoluta */
-    bottom: 40px; /* Define a distância de 40 pixels em relação à borda inferior */
-    left: 100px; /* Define a distância de 100 pixels em relação à borda esquerda */
-    display: flex; /* Define o comportamento de layout como flexível */
-    justify-content: center; /* Centraliza os elementos horizontalmente */
-    align-items: center; /* Centraliza os elementos verticalmente */
-    }
-    
-    .icons li{
-    list-style: none; /* Remove a estilização padrão das marcadores de lista */
-    }
-    
-    .icons li a{
-    display: inline-block; /* Define o elemento como um bloco de nível inline */
-    margin-left: 45px; /* Define a margem esquerda como 45 pixels */
-    background: #222; /* Define o fundo com a cor #222 */
-    width: 50px; /* Define a largura como 50 pixels */
-    height: 50px; /* Define a altura como 50 pixels */
-    display: flex; /* Define o comportamento de layout como flexível */
-    justify-content: center; /* Centraliza os elementos horizontalmente */
-    align-items: center; /* Centraliza os elementos verticalmente */
-    border-radius: 50%; /* Define o raio de borda como 50%, criando um círculo */
-    transition: 0.3s ease-in-out; /* Adiciona uma transição suave com duração de 0.3 segundos */
-    }
-    
-    .icons li a:hover{
-    background: #F0E68C; /* Define o fundo com a cor #F0E68C ao passar o mouse por cima */
-    transform: translateY(-10px); /* Aplica uma transformação de translação vertical de -10 pixels ao elemento ao passar o mouse por cima */
-    }
-    
-    .icons li a img{
-    filter: invert(1); /* Inverte as cores da imagem */
-    transform: scale(0.5); /* Reduz a escala da imagem para 50% do tamanho original */
-    }
-    
-.boxImg{
-    position: absolute;
-    right: 0;
-    bottom: -40px;
+  transition: 0.3s ease-in-out; /* Adiciona uma transição suave com duração de 0.3 segundos */
 }
-.boxImg img{
-    width: 200px;
+
+.content .text a:hover {
+  transform: translateY(
+    -10px
+  ); /* Aplica uma transformação de translação vertical de -10 pixels ao elemento ao passar o mouse por cima */
+}
+
+.icons {
+  position: absolute; /* Define a posição como absoluta */
+  bottom: 40px; /* Define a distância de 40 pixels em relação à borda inferior */
+  left: 100px; /* Define a distância de 100 pixels em relação à borda esquerda */
+  display: flex; /* Define o comportamento de layout como flexível */
+  justify-content: center; /* Centraliza os elementos horizontalmente */
+  align-items: center; /* Centraliza os elementos verticalmente */
+}
+
+.icons li {
+  list-style: none; /* Remove a estilização padrão das marcadores de lista */
+}
+
+.icons li a {
+  display: inline-block; /* Define o elemento como um bloco de nível inline */
+  margin-left: 45px; /* Define a margem esquerda como 45 pixels */
+  background: #222; /* Define o fundo com a cor #222 */
+  width: 50px; /* Define a largura como 50 pixels */
+  height: 50px; /* Define a altura como 50 pixels */
+  display: flex; /* Define o comportamento de layout como flexível */
+  justify-content: center; /* Centraliza os elementos horizontalmente */
+  align-items: center; /* Centraliza os elementos verticalmente */
+  border-radius: 50%; /* Define o raio de borda como 50%, criando um círculo */
+  transition: 0.3s ease-in-out; /* Adiciona uma transição suave com duração de 0.3 segundos */
+}
+
+.icons li a:hover {
+  background: #f0e68c; /* Define o fundo com a cor #F0E68C ao passar o mouse por cima */
+  transform: translateY(
+    -10px
+  ); /* Aplica uma transformação de translação vertical de -10 pixels ao elemento ao passar o mouse por cima */
+}
+
+.icons li a img {
+  filter: invert(1); /* Inverte as cores da imagem */
+  transform: scale(
+    0.5
+  ); /* Reduz a escala da imagem para 50% do tamanho original */
+}
+
+.boxImg {
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+}
+.boxImg img {
+  width: 200px;
 }
