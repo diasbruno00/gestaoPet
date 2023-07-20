@@ -2,9 +2,10 @@ const  mongoose = require ('mongoose');
 const  { Schema } = require ('mongoose');
 
  const PetDao = new Schema({
-  
+
   nome: {
-    type: String
+    type: String,
+    unique: true
   },
   idade: {
     type: Number

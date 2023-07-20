@@ -12,6 +12,7 @@ const app = express()
 const porta = 5500
 const middlewares = new Middlewares()
 
+/*
 const MongoStore = require('connect-mongo')(session)
 
 const sessionOptions = session({
@@ -25,15 +26,13 @@ const sessionOptions = session({
     }
 })
 app.use(sessionOptions)
+*/
 
-/*
 app.use(session({
     secret: "crud",
     resave: true,
     saveUninitialized: true
 }))
-*/
-
 
 mongoose.connect('mongodb://localhost/pet')
 

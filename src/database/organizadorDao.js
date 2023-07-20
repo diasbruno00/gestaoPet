@@ -2,9 +2,6 @@ const  mongoose = require ('mongoose');
 const  { Schema } = require ('mongoose');
 
  const OrganizadorDao = new Schema({
-  observacao: {
-    type: String
-  },
   dataConsulta :{
     type: String
   },
@@ -26,11 +23,14 @@ const  { Schema } = require ('mongoose');
   feddback: {
     type : String
   },
-   usuario: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Pet',
-    required: true
-   }
+  nomePet: {
+    type : String,
+    require: true
+  },
+  nomeVeterinario: {
+    type: String,
+    require: true
+  }
 })
 
-module.exports = mongoose.model('Pet', PetDao)
+module.exports = mongoose.model('Organizador', OrganizadorDao)

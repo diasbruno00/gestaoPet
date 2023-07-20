@@ -11,7 +11,7 @@
 							<i class="fa fa-home text-center mr-1"></i> 
 							Usuário
 						</a>
-						<a  href="/principal/{{usuario._id}}" class="nav-link" id="application-tab" data-toggle="pill" role="tab" aria-controls="application" aria-selected="false">
+						<a  href="/principal/" class="nav-link" id="application-tab" data-toggle="pill" role="tab" aria-controls="application" aria-selected="false">
 							<i class="fa fa-tv text-center mr-1"></i> 
 							Voltar ao Inicio
 						</a>
@@ -71,13 +71,15 @@
 						</div>
 						<div>
 							<button class="btn btn-primary" type="submit" >Atualizar</button>
-							<a href="/exluir/usuario/{{usuario._id}}">  <button class="btn btn-danger"> Excluir</button> </a>
-						</div>
 						</form>
+						
+						</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+
+		<a href="/excluir/usuario/{{usuario._id}}">  <button class="btn btn-danger"> Excluir</button> </a>
 
 	</section>

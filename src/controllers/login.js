@@ -2,6 +2,7 @@ const LoginDao = require("../database/loginDao");
 const Login = require("../model/login");
 
 class ControllerLogin {
+  
   constructor() {}
 
   renderizarPaginaCriarLogin = (req, res) => {
@@ -31,11 +32,11 @@ class ControllerLogin {
         senha: login.senha,
       });
 
+      console.log(dados)
       const id = dados._id;
 
       req.flash("sucesso", `Ola, Realize seu cadastro`);
       res.redirect(`/cadastro/${id}`);
-      
     }
   };
 
@@ -44,7 +45,7 @@ class ControllerLogin {
 
     //LoginDao.find({email,senha}).populate('usuario')
     const resposta = await LoginDao.findOne({ email, senha });
-    console.log(resposta)
+    console.log(resposta);
 
     if (resposta) {
       req.session.logado = resposta;

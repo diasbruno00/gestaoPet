@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="crudVeterinario/css/style.css">
 
@@ -7,12 +7,7 @@
 			<h1 class="mb-5">Configurações</h1>
 			<div class="bg-white shadow rounded-lg d-block d-sm-flex">
 				<div class="profile-tab-nav border-right">
-					<div class="p-4">
-						<div class="img-circle text-center mb-3">
-							<img src="crudVeterinario/img/user2.jpg" alt="Image" class="shadow">
-						</div>
-						<h4 class="text-center">Lucas Guimarães</h4>
-					</div>
+					
 					<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 						<a class="nav-link" id="application-tab" data-toggle="pill" href="#application" role="tab" aria-controls="application" aria-selected="false">
 							<i class="fa fa-tv text-center mr-1"></i> 
@@ -24,71 +19,61 @@
 						</a>
 					</div>
 				</div>
+				<form action="/veterinario" method="post">
 					<div class="tab-pane fade" id="notification" role="tabpanel" aria-labelledby="notification-tab">
 						<h3 class="mb-4">Configurações dos Dados Clínicos</h3>
-						<div class="img-circle text-center mb-3">
-							<img src="crudVeterinario/img/user2.jpg" alt="Image" class="shadow">
-						</div>
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
 								  	<label>Nome do Veterinário</label>
-								  	<input type="text" class="form-control" value="Jorge">
+								  	<input type="text" class="form-control" value="" name="nome">
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 								  	<label>Idade</label>
-								  	<input type="text" class="form-control" value="45">
+								  	<input type="text" class="form-control" value="" name="idade">
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 								  	<label>Email</label>
-								  	<input type="text" class="form-control" value="consultoriobemviver@gmail.com">
+								  	<input type="text" class="form-control" value="" name="email">
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 								  	<label>Telefone</label>
-								  	<input type="text" class="form-control" value="(31)98877-6655">
+								  	<input type="text" class="form-control" value="" name="telefone">
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 								  	<label>CRMV</label>
-								  	<input type="text" class="form-control" value="15096">
+								  	<input type="text" class="form-control" value="" name="crmv">
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 								  	<label>Consultório</label>
-								  	<input type="text" class="form-control" value="Bem Viver">
-								</div>
-							</div>
-							<div class="col-md-12">
-								<div class="form-group">
-										<label>Imagem do veterinario</label>
-									<input type="file" name="" id="" class="form-control">
+								  	<input type="text" class="form-control" value="" name="consultorio">
 								</div>
 							</div>
 							<div class="col-md-12">
 								<div class="form-group">
 								  	<label>Detalhes da última consulta</label>
-									<textarea class="form-control" rows="4">09/04/2023 ás 15h00 no Bem Viver, Pituca estava vomitando e nunca realizou exames.</textarea>
+									<textarea class="form-control" rows="4" name="detalhes"> </textarea>
 								</div>
 							</div>
 						</div>
 						<div>
-							<button class="btn btn-primary">Atualizar</button>
-							<button class="btn btn-light">Cadastrar</button>
-							<button class="btn btn-danger">Excluir</button>
-							<button class="btn btn-warning">Trocar Pet</button>
+							<button class="btn btn-light" type="submit" >Cadastrar</button>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		</form>
 	</section>
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>

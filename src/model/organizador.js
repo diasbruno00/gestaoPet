@@ -1,15 +1,15 @@
 class Organizador {
   constructor(
-    observacao,
     dataConsulta,
     dataVacina,
     medicacao,
     horarioAlimentacao,
     higiene,
     cuidadeExtresas,
-    feddback
+    feddback,
+    nomePet,
+    nomeVeterinario
   ) {
-    this.observacao = observacao;
     this.dataConsulta = dataConsulta;
     this.dataVacina = dataVacina;
     this.medicacao = medicacao;
@@ -17,6 +17,8 @@ class Organizador {
     this.higiene = higiene;
     this.cuidadeExtresas = cuidadeExtresas;
     this.feddback = feddback;
+    this.nomePet = nomePet;
+    this.nomeVeterinario = nomeVeterinario
   }
 }
 

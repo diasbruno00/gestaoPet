@@ -1,34 +1,63 @@
- <link rel="stylesheet" href="pesquisa/style.css" />
+<link rel="stylesheet" href="pesquisa/style.css" />
 <link rel="stylesheet" href="pesquisa/search-box.css" />
 
- <section>
-            <div class="circle"></div>
-            <header>
-                <a href="#"><img src="pesquisa/img/logo.png" alt="" class="logo"></a> <!-- Logo do NotionPet -->
-                <nav class="navegation">
-                    <ul>
-                        <li><a href="#">Home</a></li> <!-- Link para a página inicial -->
-                        <li><a href="#">Meu Pet</a></li> <!-- Link para a página do "Meu Pet" -->
-                        <li><a href="#">Pesquisar</a></li> <!-- Link para a página de pesquisa -->
-                        <li><a href="#">Contato</a></li> <!-- Link para a página de contato -->
-                    </ul>
-                </nav>
-            </header>
- 
-            <main>
-                <div class="content">
-                    <div class="text">
-                        <h3>Procure os dados do seu pet com uma palavra - chave</h3> <!-- Descrição do serviço NotionPet -->
-                    </div>
-                </div>
+<section>
+  <main>
+    <div class="content">
+      <div class="text">
+        <h3>Procure o seu pet pelo nome</h3>
+        <!-- Descrição do serviço NotionPet -->
+      </div>
+    </div>
 
-                <div class="search-container">
-                    <label for="search-input" class="search-icon"></label>
-                    <input type="text" class="search-input" id="search-input" required />
-                </div>
-            </main>
-            
-            <div class="boxImg">
-                <img src="pesquisa/img/peixe.png" alt="" class="img1" style="width: 900px;">
-            </div>        
-        </section>
+    <form class="d-flex" role="search" method="get">
+      <div class="search-container">
+        <label for="search-input" class="search-icon"></label>
+        <input
+          type="text"
+          class="search-input"
+          id="search-input"
+          name="pesquisar"
+          type="submit"          
+        />
+
+      </div>
+    </form>
+  </main>
+
+  <div class="responsive-table">
+<table class="table my-2 ">
+    <tr class="table-warning" >
+      <th class="text-center" scope="col">Nome</th>
+      <th class="text-center" scope="col">idade</th>
+      <th  class="text-center" scope="col">tipo</th>
+      <th class="text-center" scope="col">raca</th>
+      <th class="text-center" scope="col">remedios</th>
+      <th class="text-center" scope="col">vacina</th>
+      <th class="text-center" scope="col">alimentacao</th>
+      <th class="text-center" scope="col">observacao</th>
+    </tr>
+  </thead>
+  <tbody>
+     {{#each lista}}
+     <tbody>
+       <tr>
+        <td class="text-center"> {{nome}}  </td> 
+        <td class="text-center"> {{idade}}  </td> 
+        <td class="text-center"> {{tipo}}  </td> 
+        <td class="text-center"> {{raca}}</tdclass=> 
+        <td class="text-center"> {{remedios}}  </td> 
+        <td class="text-center"> {{vacina}}  </td> 
+        <td class="text-center"> {{alimentacao}}  </td> 
+        <td class="text-center"> {{observacao}}  </td> 
+
+        <td class="text-center"> <a href="/editar/cliente/{{id}}"> editar </a></td> 
+        <td class="text-center"> <a id="excluir" class="text-danger" href="/deletar/pet/{{_id}}">Excluir</a></td>
+      </tr>
+     {{/each}}
+    </tbody>
+</table>
+
+
+</section>
+
