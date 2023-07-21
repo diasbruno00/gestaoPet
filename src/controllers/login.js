@@ -29,12 +29,12 @@ class ControllerLogin {
       const iguais = login.verificandoSenhas(senha, confirmarSenha);
 
       if (iguais) {
-        
         const dados = await LoginDao.create({
           email: login.email,
           senha: login.senha,
         });
-  
+
+        req.session.logado = dados
         const id = dados._id;
 
         req.flash("sucesso", `Ola, Realize seu cadastro`);
@@ -51,7 +51,6 @@ class ControllerLogin {
 
     //LoginDao.find({email,senha}).populate('usuario')
     const resposta = await LoginDao.findOne({ email, senha });
-    console.log(resposta);
 
     if (resposta) {
       req.session.logado = resposta;
@@ -62,6 +61,11 @@ class ControllerLogin {
       res.redirect("back");
     }
   };
+
+  deslogar(req, res, next) {
+    req.session.destroy();
+    res.redirect("/criar");
+  }
 }
 
 module.exports = ControllerLogin;
