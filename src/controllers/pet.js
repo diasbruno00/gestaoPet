@@ -123,7 +123,7 @@ class ControllerPet {
       let lista;
 
       try {
-        lista = await PetDao.findOne({ nome: nomePet });
+        lista = await PetDao.find({ nome: nomePet });
       } catch (error) {
         console.log(error);
       }

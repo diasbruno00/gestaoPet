@@ -2,11 +2,9 @@ const UsuarioDao = require("../database/usuarioDao");
 const Usuario = require("../model/usuario");
 
 class ControllerUsuario {
-  
   constructor() {}
 
   renderizarPaginaCadastro = async (req, res) => {
-
     const id = req.params.id;
 
     const obj = {
@@ -17,9 +15,7 @@ class ControllerUsuario {
   };
 
   listarUsuarioCadastrado = async (req, res) => {
-
     try {
-
       /*
       const id = req.params.id;
       const usuario = await UsuarioDao.findOne({ login: id }).populate("login");
@@ -93,14 +89,23 @@ class ControllerUsuario {
   };
 
   deletarUsuario = async (req, res) => {
+    const id = req.params.id;
+    console.log("meu id para excluir : " + id);
+    const usuarioExcluido = await UsuarioDao.findOneAndDelete({ _id: id });
+    req.session.usuario = "";
+    req.flash(
+      "sucesso",
+      `${usuarioExcluido.primeiroNome} excluido com sucesso`
+    );
+    res.redirect("/principal/");
+  };
 
-    const id = req.params.id
-    console.log('meu id para excluir : '+ id)
-    const usuarioExcluido = await UsuarioDao.findOneAndDelete({_id: id})
-    req.session.usuario = ''
-    req.flash('sucesso',`${usuarioExcluido.primeiroNome} excluido com sucesso`) 
-    res.redirect('/principal/')
+  recuperarUsuarioLogado = async (req, res) => {
+    const id = req.params.id;
+    const usuario = await UsuarioDao.findOne({ login: id }).populate("login");
+    req.session.usuario = usuario;
 
+    res.redirect("/principal");
   };
 }
 

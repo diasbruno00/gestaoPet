@@ -56,7 +56,7 @@ class ControllerLogin {
     if (resposta) {
       req.session.logado = resposta;
       //res.redirect('/principal')
-      res.redirect(`/principal/${resposta._id}`);
+      res.redirect(`/recuperar/usuario/${resposta._id}`);
     } else {
       req.flash("alerta", `Verifique os dados informados`);
       res.redirect("back");

@@ -33,6 +33,7 @@ router.post("/login", controllerLogin.recuperarDadosLogin);
 // rotas usuarios
 router.get("/cadastro/:id", controllerUsuario.renderizarPaginaCadastro);
 router.get("/lista/usuario/", controllerUsuario.listarUsuarioCadastrado);
+router.get('/recuperar/usuario/:id',controllerUsuario.recuperarUsuarioLogado)
 router.post("/cadastro/:id", controllerUsuario.salvarDadosUsuario);
 router.post("/atualizar/usuario/:id", controllerUsuario.atualizarUsuario);
 router.get("/excluir/usuario/:id", controllerUsuario.deletarUsuario);
