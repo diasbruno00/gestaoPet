@@ -1,32 +1,15 @@
-<link rel="stylesheet" href="/pesquisa/style.css" />
-<link rel="stylesheet" href="/pesquisa/search-box.css" />
 
-<section>
-  <main>
-    <div class="content">
-      <div class="text">
-        <h3>Procure na sua Agenda</h3>
-        <!-- Descrição do serviço NotionPet -->
-      </div>
-    </div>
-
-    <form class="d-flex" role="search" method="get">
-      <div class="search-container">
-        <label for="search-input" class="search-icon"></label>
-        <input
-          type="text"
-          class="search-input"
-          id="search-input"
-          name="pesquisar"
-          type="submit"          
-          placeholder="Nome do pet"
-        />
-
-      </div>
+<nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <a href="/principal/" class="navbar-brand"> <span class="material-symbols-outlined">home</span></a>
+    <form class="d-flex" role="search" method="get" >
+      <input class="form-control me-2" type="search" name="pesquisar" placeholder="nome do pet" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Buscar</button>
     </form>
-  </main>
+  </div>
+</nav>
 
-  <div class="responsive-table">
+<div class="responsive-table">
 <table class="table my-2 ">
     <tr class="table-warning" >
       <th class="text-center" scope="col">Nome do Pet</th>
@@ -62,5 +45,4 @@
 </table>
 
 
-</section>
 

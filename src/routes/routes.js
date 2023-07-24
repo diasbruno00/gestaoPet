@@ -74,6 +74,7 @@ router.get(
   controllerUsuario.deletarUsuario
 );
 
+// Rotas PET
 //router.get('/pet',controllerPet.renderizarPaginaCadastro)
 router.post(
   "/salvar/pet/:id",

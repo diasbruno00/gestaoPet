@@ -36,11 +36,8 @@ class ControllerPet {
     );
 
     const resposta = await PetDao.create(pet);
-    console.log(resposta);
 
     req.session.pet = resposta;
-
-    //const usuario = await UsuarioDao.findById(resposta.usuario)
 
     req.flash("sucesso", `Os dados do pet ${nome} foram salvo com sucesso`);
     res.redirect(`/principal/`);
@@ -84,12 +81,12 @@ class ControllerPet {
 
   deletarPet = async (req, res) => {
     const id = req.params.id;
-
     const petExcluido = await PetDao.findOneAndDelete({ _id: id });
     req.session.pet = "";
     req.flash("sucesso", "Pet excluido com sucesso");
     res.redirect("back");
   };
+
   renderizarPaginaCadastroPet = (req, res) => {
     res.render("cadastroPet");
   };
@@ -109,21 +106,19 @@ class ControllerPet {
     const nomePet = req.query.pesquisar;
 
     if (!nomePet) {
-        
       let lista;
 
       try {
-        lista = await PetDao.find();
+        lista = await PetDao.find().populate("usuario");
       } catch (error) {
         console.log(error);
       }
       res.render("pesquisa", { lista });
     } else {
-
       let lista;
 
       try {
-        lista = await PetDao.find({ nome: nomePet });
+        lista = await PetDao.find({ nome: nomePet }).populate("usuario");
       } catch (error) {
         console.log(error);
       }

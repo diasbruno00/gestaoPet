@@ -4,8 +4,7 @@ const  { Schema } = require ('mongoose');
  const PetDao = new Schema({
 
   nome: {
-    type: String,
-    unique: true
+    type: String
   },
   idade: {
     type: Number

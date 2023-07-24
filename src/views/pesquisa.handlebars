@@ -1,36 +1,21 @@
-<link rel="stylesheet" href="pesquisa/style.css" />
-<link rel="stylesheet" href="pesquisa/search-box.css" />
 
-<section>
 
-  <main>
-    <div class="content">
-      <div class="text">
-        <h3>Procure o seu pet pelo nome</h3>
-        <!-- Descrição do serviço NotionPet -->
-      </div>
-    </div>
-
-    <form class="d-flex" role="search" method="get">
-      <div class="search-container">
-        <label for="search-input" class="search-icon"></label>
-        <input
-          type="text"
-          class="search-input"
-          id="search-input"
-          name="pesquisar"
-          type="submit"   
-          placeholder="nome do pet"       
-        />
-
-      </div>
+<nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <a href="/principal/" class="navbar-brand"> <span class="material-symbols-outlined">home</span></a>
+    <form class="d-flex" role="search" method="get" >
+      <input class="form-control me-2" type="search" name="pesquisar" placeholder="nome do pet" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Buscar</button>
     </form>
-  </main>
+
+  </div>
+</nav>
 
   <div class="responsive-table">
 <table class="table my-2 ">
     <tr class="table-warning" >
-      <th class="text-center" scope="col">Nome</th>
+      <th class="text-center" scope="col">Nome do Dono</th>
+      <th class="text-center" scope="col">Nome do Pet</th>
       <th class="text-center" scope="col">idade</th>
       <th  class="text-center" scope="col">Tipo</th>
       <th class="text-center" scope="col">Raca</th>
@@ -44,6 +29,7 @@
      {{#each lista}}
      <tbody>
        <tr>
+        <td class="text-center"> {{usuario.primeiroNome}}  </td> 
         <td class="text-center"> {{nome}}  </td> 
         <td class="text-center"> {{idade}}  </td> 
         <td class="text-center"> {{tipo}}  </td> 
@@ -53,12 +39,12 @@
         <td class="text-center"> {{alimentacao}}  </td> 
         <td class="text-center"> {{observacao}}  </td> 
         <td class="text-center"> <a href="/edicao/pet/{{_id}}"> <span class="material-symbols-outlined">edit </span> </a></td> 
-        <td class="text-center"> <a class="text-danger" href="/deletar/pet/{{_id}}"><span class="material-symbols-outlined">delete</span></a></td>
+        <td class="text-center"> <a id="excluir" class="text-danger" href="/deletar/pet/{{_id}}"><span class="material-symbols-outlined">delete</span></a></td>
       </tr>
      {{/each}}
     </tbody>
 </table>
 
 
-</section>
+
 
