@@ -40,6 +40,7 @@ router.post("/criar", controllerLogin.salvarDadosLogin);
 
 router.get("/login", controllerLogin.renderizarPaginaRealizarLogin);
 router.post("/login", controllerLogin.recuperarDadosLogin);
+router.get('/deslogar',controllerLogin.deslogar)
 
 // rotas usuarios
 router.get(
