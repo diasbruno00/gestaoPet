@@ -43,12 +43,12 @@
         <div class="contact-form">
           <form method="post" action="/contatos">
             <div>
-              <input type="text" class="form-control" placeholder="Primeiro Nome" name="nome">
-              <input type="text" class="form-control" placeholder="Sobrenome" name="sobrenome">
+              <input type="text" class="form-control" placeholder="Primeiro Nome" name="nome" value="{{usuario.primeiroNome}}">
+              <input type="text" class="form-control" placeholder="Sobrenome" name="sobrenome" value="{{usuario.sobrenome}}">
             </div>
             <div>
-              <input type="email" class="form-control" placeholder="E-mail" name="email">
-              <input type="text" class="form-control" placeholder="Telefone" name="telefone">
+              <input type="email" class="form-control" placeholder="E-mail" name="email" value="{{usuario.email}}">
+              <input type="text" class="form-control" placeholder="Telefone" name="telefone" value="{{usuario.telefone}}">
             </div>
             <textarea rows="5" placeholder="Mensagem" class="form-control" name="mensagem"></textarea>
             <button type="submit" class="send-btn" > Enviar Mensagem </button>
