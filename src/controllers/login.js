@@ -51,6 +51,7 @@ class ControllerLogin {
 
     //LoginDao.find({email,senha}).populate('usuario')
     const resposta = await LoginDao.findOne({ email, senha });
+  
 
     if (resposta) {
       req.session.logado = resposta;

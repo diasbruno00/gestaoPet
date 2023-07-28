@@ -103,6 +103,7 @@ class ControllerUsuario {
   recuperarUsuarioLogado = async (req, res) => {
     const id = req.params.id;
     const usuario = await UsuarioDao.findOne({ login: id }).populate("login");
+    console.log(usuario)
     req.session.usuario = usuario;
 
     res.redirect("/principal");

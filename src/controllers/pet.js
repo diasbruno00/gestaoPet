@@ -66,9 +66,10 @@ class ControllerPet {
       vacina,
       alimentacao,
       observacao,
-      id
+      req.session.usuario.id
     );
 
+    
     const novoPet = await PetDao.findByIdAndUpdate(id, pet, {
       new: true,
     });
@@ -95,7 +96,8 @@ class ControllerPet {
     const id = req.params.id;
 
     try {
-      const pet = await PetDao.findById({ _id: id });
+      const pet = await PetDao.findById({ _id: id }).populate('usuario');
+      console.log(pet)
       res.render("crudPet", { pet });
     } catch (e) {
       console.log(e);
@@ -109,7 +111,9 @@ class ControllerPet {
       let lista;
 
       try {
-        lista = await PetDao.find().populate("usuario");
+
+        lista = await PetDao.find().populate('usuario')
+
       } catch (error) {
         console.log(error);
       }
@@ -119,6 +123,7 @@ class ControllerPet {
 
       try {
         lista = await PetDao.find({ nome: nomePet }).populate("usuario");
+        console.log(lista)
       } catch (error) {
         console.log(error);
       }
