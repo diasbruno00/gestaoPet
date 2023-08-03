@@ -79,10 +79,11 @@ class ControllerOrganizador {
       const organizadorExcluido = await OrganizadorDao.findOneAndDelete({
         _id: id,
       });
-      req.flash("sucesso", "Organizador excluido com sucesso");
-      res.redirect("/pesquisar/organizador");
+      res.json(organizadorExcluido)
     } catch (error) {
       console.log(error);
+      res.json({erro: error})
+
     }
   };
 

@@ -69,7 +69,6 @@ class ControllerPet {
       req.session.usuario.id
     );
 
-    
     const novoPet = await PetDao.findByIdAndUpdate(id, pet, {
       new: true,
     });
@@ -81,11 +80,17 @@ class ControllerPet {
   };
 
   deletarPet = async (req, res) => {
-    const id = req.params.id;
-    const petExcluido = await PetDao.findOneAndDelete({ _id: id });
-    req.session.pet = "";
-    req.flash("sucesso", "Pet excluido com sucesso");
-    res.redirect("back");
+    try {
+      const id = req.params.id;
+      console.log("meu id beck", id);
+      const petExcluido = await PetDao.findOneAndDelete({ _id: id });
+      req.session.pet = "";
+      // req.flash("sucesso", "Pet excluido com sucesso");
+      // res.redirect("back");
+      res.json(petExcluido);
+    } catch (error) {
+      res.json({ erro: error });
+    }
   };
 
   renderizarPaginaCadastroPet = (req, res) => {
@@ -96,8 +101,8 @@ class ControllerPet {
     const id = req.params.id;
 
     try {
-      const pet = await PetDao.findById({ _id: id }).populate('usuario');
-      console.log(pet)
+      const pet = await PetDao.findById({ _id: id }).populate("usuario");
+
       res.render("crudPet", { pet });
     } catch (e) {
       console.log(e);
@@ -111,9 +116,7 @@ class ControllerPet {
       let lista;
 
       try {
-
-        lista = await PetDao.find().populate('usuario')
-
+        lista = await PetDao.find().populate("usuario");
       } catch (error) {
         console.log(error);
       }
@@ -123,7 +126,7 @@ class ControllerPet {
 
       try {
         lista = await PetDao.find({ nome: nomePet }).populate("usuario");
-        console.log(lista)
+        console.log(lista);
       } catch (error) {
         console.log(error);
       }

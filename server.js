@@ -12,6 +12,8 @@ const app = express()
 const porta = 5500
 const middlewares = new Middlewares()
 
+require("dotenv").config()
+
 /*
 const MongoStore = require('connect-mongo')(session)
 
@@ -34,7 +36,9 @@ app.use(session({
     saveUninitialized: true
 }))
 
-mongoose.connect('mongodb://localhost/pet')
+require("./src/database/conexao")
+
+//mongoose.connect('mongodb://localhost/pet')
 
 app.use(express.json())
 

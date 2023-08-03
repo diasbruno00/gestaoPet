@@ -86,7 +86,7 @@ router.post(
   middlewares.verficandoLoginAdmin,
   controllerPet.atualizarDadosPet
 );
-router.get(
+router.delete(
   "/deletar/pet/:id",
   middlewares.verficandoLoginAdmin,
   controllerPet.deletarPet
@@ -118,7 +118,7 @@ router.get(
   middlewares.verficandoLoginAdmin,
   controllerOganizador.renderizarPaginaPesquisarOrganizador
 );
-router.get(
+router.delete(
   "/excluir/organizador/:id",
   middlewares.verficandoLoginAdmin,
   controllerOganizador.deletarOrganizador
@@ -150,7 +150,7 @@ router.get(
   middlewares.verficandoLoginAdmin,
   controllerVeterinario.renderizarPaginaPesquisaVeterinario
 );
-router.get(
+router.delete(
   "/excluir/veterinario/:id",
   middlewares.verficandoLoginAdmin,
   controllerVeterinario.excluirVeterinario

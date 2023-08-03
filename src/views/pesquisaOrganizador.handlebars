@@ -38,11 +38,60 @@
         <td class="text-center"> {{cuidadosExtras}}  </td> 
         <td class="text-center"> {{feddback}}  </td> 
         <td class="text-center"> <a href="/edicao/organizador/{{_id}}"> <span class="material-symbols-outlined">edit</span></a></td> 
-        <td class="text-center"> <a class="text-danger" href="/excluir/organizador/{{_id}}"><span class="material-symbols-outlined">delete</span> </a></td>
+        <td class="text-center"> <a  id="excluir" class="text-danger" href="/excluir/organizador/{{_id}}"><span class="material-symbols-outlined">delete</span> </a></td>
       </tr>
      {{/each}}
     </tbody>
 </table>
 
 
+
+
+<script>
+  const excluirLinks = document.querySelectorAll("#excluir");
+  excluirLinks.forEach(link => {
+    link.addEventListener("click", event => {
+      event.preventDefault();
+      const url = event.currentTarget.getAttribute("href"); // Obtem a URL do link de exclusão
+      mostrarAlerta(url);
+    });
+  });
+
+  async function mostrarAlerta(url) {
+    const result = await Swal.fire({
+      title: "Deseja realmente excluir os dados?",
+      text: "Não será possível recuperar depois da exclusão",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Sim, excluir!"
+    });
+
+    if (result.isConfirmed) {
+      excluirDados(url);
+    }
+  }
+
+  async function excluirDados(url) {
+    try {
+      const response = await axios.delete(url);
+      const organizador = response.data
+      if (response.status === 200) {
+        await Swal.fire("Excluído!", `Organizador do ${organizador.nomePet} excluido com sucesso`, "success");
+        carregarPagina();
+      } else {
+        throw new Error("Ocorreu um erro ao excluir o registro.");
+      }
+    } catch (error) {
+      console.error(error);
+      Swal.fire("Erro", error.message, "error");
+    }
+  }
+
+  function carregarPagina() {
+    // Força o recarregamento da página após 1500ms (1.5 segundos)
+    setTimeout(() => window.location.reload(), 1500);
+  }
+</script>
 

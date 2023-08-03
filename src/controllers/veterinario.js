@@ -39,12 +39,16 @@ class ControllerVeterinario {
   };
 
   excluirVeterinario = async (req, res) => {
-    const id = req.params.id;
+    try {
+      const id = req.params.id;
 
-    const veterinario = await VeterinarioDao.findOneAndDelete({ _id: id });
+      const veterinario = await VeterinarioDao.findOneAndDelete({ _id: id });
 
-    req.flash("sucesso", "Veterinario excluido com sucesso");
-    res.redirect("back");
+      res.json(veterinario);
+    } catch (error) {
+      console.log(error);
+      res.json({ erro: error });
+    }
   };
 
   renderizarPaginaEditarVet = async (req, res) => {
@@ -75,8 +79,8 @@ class ControllerVeterinario {
       }
     );
 
-    req.flash("sucesso", "Dados atualizados com sucesso")
-    res.redirect("/pesquisa/veterinario")
+    req.flash("sucesso", "Dados atualizados com sucesso");
+    res.redirect("/pesquisa/veterinario");
   };
 }
 
