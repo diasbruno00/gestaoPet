@@ -73,7 +73,7 @@ class ControllerUsuario {
       indentificador,
       idade,
       bio,
-      id
+      req.session.logado._id
     );
     console.log(usuario);
 

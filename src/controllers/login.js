@@ -1,5 +1,6 @@
 const LoginDao = require("../database/loginDao");
 const Login = require("../model/login");
+const bcrypt = require("bcrypt");
 
 class ControllerLogin {
   constructor() {}
@@ -29,12 +30,14 @@ class ControllerLogin {
       const iguais = login.verificandoSenhas(senha, confirmarSenha);
 
       if (iguais) {
+        const senhaSegura = await bcrypt.hash(senha, 10);
+
         const dados = await LoginDao.create({
           email: login.email,
-          senha: login.senha,
+          senha: senhaSegura,
         });
 
-        req.session.logado = dados
+        req.session.logado = dados;
         const id = dados._id;
 
         req.flash("sucesso", `Ola, Realize seu cadastro`);
@@ -48,18 +51,40 @@ class ControllerLogin {
 
   recuperarDadosLogin = async (req, res) => {
     const { email, senha } = req.body;
-
-    //LoginDao.find({email,senha}).populate('usuario')
-    const resposta = await LoginDao.findOne({ email, senha });
   
+    try {
+      const resposta = await LoginDao.find({ email });
+      if (!resposta || resposta.length === 0) {
 
-    if (resposta) {
-      req.session.logado = resposta;
-      //res.redirect('/principal')
-      res.redirect(`/recuperar/usuario/${resposta._id}`);
-    } else {
-      req.flash("alerta", `Verifique os dados informados`);
+        req.flash("alerta", `${email} não existe na base de dados`);
+        res.redirect("back");
+        return;
+      }
+  
+      let usuarioEncontrado = null;
+  
+      for (const login of resposta) {
+        const senhaCorrespondente = login.senha;
+        const senhaCorreta = await bcrypt.compare(senha, senhaCorrespondente);
+  
+        if (senhaCorreta) {
+          usuarioEncontrado = login;
+          req.session.logado = usuarioEncontrado;
+          console.log("Login" + login)
+          console.log("x" + req.session.logado)
+          console.log(usuarioEncontrado._id)
+
+          res.redirect(`/recuperar/usuario/${usuarioEncontrado._id}`);
+          return
+        }
+      }
+    
+      req.flash("alerta", "Verifique os dados informados");
       res.redirect("back");
+      
+    } catch (error) {
+      console.log(error);
+      res.json({erro: error})
     }
   };
 
