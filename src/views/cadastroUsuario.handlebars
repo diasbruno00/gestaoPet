@@ -19,7 +19,7 @@
 						<h3 class="mb-4">Cadastro de Usuario</h3>
 
                 {{#each obj}}
-                    <form action="/cadastro/{{chave}}" method="post">
+                    <form action="/cadastro/{{chave}}" method="post" id="form">
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
@@ -78,3 +78,27 @@
 		</div>
         {{/each}}
 	</section>
+
+	
+	<script>
+    const form = document.getElementById('form')
+    form.addEventListener('submit', async (event) => {
+        try {
+			event.preventDefault()
+		   const result = await mostrarAlert()
+		   form.submit()
+        } catch (error) {
+            console.error(error)
+        }
+    })
+
+	async function mostrarAlert(){
+
+	const result = await Swal.fire(
+       'Good job!',
+       'Usuario salvo com sucesso na base de dados!',
+       'success'
+       )
+	}
+	</script>
+

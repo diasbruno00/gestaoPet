@@ -21,6 +21,14 @@ class Pet {
     this.observacao = observacao
     this.usuario = usuario;
   }
+
+  verificandoIdadeValida(){
+    if(typeof this.idade === 'number'){
+        return true
+    }else{
+        return false
+    }
+}
 }
 
 module.exports = Pet

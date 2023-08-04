@@ -23,4 +23,16 @@ describe("Pet", () => {
     expect(pet).toHaveProperty("observacao", "limpar corativo");
     expect(pet).toHaveProperty("usuario", 3);
   });
+
+  test("vericando uma idade valida", ()=>{
+    const  pet = new Pet()
+    pet.idade = 20
+    expect(pet.verificandoIdadeValida()).toBe(true)
+  })
+
+  test("vericando uma idade não valida", ()=>{
+    const  pet = new Pet()
+    pet.idade  
+    expect(pet.verificandoIdadeValida()).toBe(false)
+  })
 });

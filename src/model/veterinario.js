@@ -9,6 +9,14 @@ class Veterinario {
         this.consultorio = consultorio
         this.detalhes  = detalhes
     }
+
+    verificandoIdadeValida(){
+        if(typeof this.idade === 'number'){
+            return true
+        }else{
+            return false
+        }
+    }
 }
 
 module.exports = Veterinario

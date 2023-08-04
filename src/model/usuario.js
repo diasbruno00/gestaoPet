@@ -10,6 +10,15 @@ class Usuario {
         this.bio = bio
         this.login = login
     }
+
+
+    verificandoIdadeValida(){
+        if(typeof this.idade === 'number'){
+            return true
+        }else{
+            return false
+        }
+    }
 }
 
 module.exports = Usuario

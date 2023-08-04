@@ -23,4 +23,16 @@ describe("Veterinario", () => {
       "melhor escolha para o seu pet"
     );
   });
+
+  test("vericando uma idade valida", ()=>{
+    const  veterinario = new Veterinario()
+    veterinario.idade = 20
+    expect(veterinario.verificandoIdadeValida()).toBe(true)
+  })
+
+  test("vericando uma idade não valida", ()=>{
+    const  veterinario = new Veterinario()
+    veterinario.idade = true
+    expect(veterinario.verificandoIdadeValida()).toBe(false)
+  })
 });

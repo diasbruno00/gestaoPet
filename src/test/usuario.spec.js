@@ -22,5 +22,18 @@ describe("Usuario", () => {
     expect(usuario).toHaveProperty("bio", "apaixonado por pet")
     expect(usuario).toHaveProperty("login", 1)
   });
+
+  test("vericando uma idade valida", ()=>{
+    const usuario = new Usuario()
+    usuario.idade = 20
+    expect(usuario.verificandoIdadeValida()).toBe(true)
+  })
+
+  test("vericando uma idade não valida", ()=>{
+    const usuario = new Usuario()
+    usuario.idade 
+    expect(usuario.verificandoIdadeValida()).toBe(false)
+  })
+
 });
 

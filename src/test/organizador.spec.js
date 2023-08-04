@@ -1,4 +1,5 @@
 const Organizador = require("../model/organizador");
+const OrganizadorDao = require("../database/organizadorDao")
 
 describe("Organizador", () => {
   test("inicialização  class Organizador", () => {
@@ -26,4 +27,5 @@ describe("Organizador", () => {
     expect(organizador).toHaveProperty("nomePet", "toto");
     expect(organizador).toHaveProperty("nomeVeterinario", "mariana");
   });
+
 });

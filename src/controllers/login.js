@@ -70,10 +70,6 @@ class ControllerLogin {
         if (senhaCorreta) {
           usuarioEncontrado = login;
           req.session.logado = usuarioEncontrado;
-          console.log("Login" + login)
-          console.log("x" + req.session.logado)
-          console.log(usuarioEncontrado._id)
-
           res.redirect(`/recuperar/usuario/${usuarioEncontrado._id}`);
           return
         }

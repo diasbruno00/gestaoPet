@@ -22,7 +22,7 @@
 					<div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
 						<h3 class="mb-4">Configurações</h3>
 						
-						 <form action="/atualizar/usuario/{{usuario._id}}" method="post">
+						 <form action="/atualizar/usuario/{{usuario._id}}" method="post" id="form">
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
@@ -81,3 +81,26 @@
 		</div>
 
 	</section>
+
+		
+	<script>
+    const form = document.getElementById('form')
+    form.addEventListener('submit', async (event) => {
+        try {
+			event.preventDefault()
+		   const result = await mostrarAlert()
+		   form.submit()
+        } catch (error) {
+            console.error(error)
+        }
+    })
+
+	async function mostrarAlert(){
+
+	const result = await Swal.fire(
+       'Good job!',
+       'Dados do Usuario atualizado com sucesso!',
+       'success'
+       )
+	}
+	</script>
