@@ -5,7 +5,7 @@ class Organizador {
     medicacao,
     horarioAlimentacao,
     higiene,
-    cuidadeExtresas,
+    cuidadoExtras,
     feddback,
     nomePet,
     nomeVeterinario
@@ -15,7 +15,7 @@ class Organizador {
     this.medicacao = medicacao;
     this.horarioAlimentacao = horarioAlimentacao;
     this.higiene = higiene;
-    this.cuidadeExtresas = cuidadeExtresas;
+    this.cuidadoExtras = cuidadoExtras;
     this.feddback = feddback;
     this.nomePet = nomePet;
     this.nomeVeterinario = nomeVeterinario

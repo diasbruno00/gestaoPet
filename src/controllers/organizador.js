@@ -13,7 +13,7 @@ class ControllerOrganizador {
       medicacao,
       horarioAlimentacao,
       higiene,
-      cuidadeExtresas,
+      cuidadoExtras,
       feddback,
       nomePet,
       nomeVeterinario,
@@ -31,7 +31,7 @@ class ControllerOrganizador {
           medicacao,
           horarioAlimentacao,
           higiene,
-          cuidadeExtresas,
+          cuidadoExtras,
           feddback,
           nomePet,
           nomeVeterinario
@@ -61,7 +61,6 @@ class ControllerOrganizador {
     console.log(nome);
     if (!nome) {
       const lista = await OrganizadorDao.find();
-      console.log(lista);
 
       res.render("pesquisaOrganizador", { lista });
     } else {

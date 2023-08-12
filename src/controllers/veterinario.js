@@ -9,7 +9,7 @@ class ControllerVeterinario {
   };
 
   salvarDadosVeterinario = (req, res) => {
-    const { nome, idade, email, telefone, crmv, consultorio, detalhes } =
+    const { nome, idade, email, telefone, crmv, consultorio} =
       req.body;
     const veterinario = new Veterinario(
       nome,
@@ -17,9 +17,8 @@ class ControllerVeterinario {
       email,
       telefone,
       crmv,
-      consultorio,
-      detalhes
-    );
+      consultorio
+      );
 
     VeterinarioDao.create(veterinario);
 
@@ -60,7 +59,7 @@ class ControllerVeterinario {
   atualizarVeterinario = async (req, res) => {
     const id = req.params.id;
 
-    const { nome, idade, email, telefone, crmv, consultorio, detalhes } =
+    const { nome, idade, email, telefone, crmv, consultorio } =
       req.body;
     const veterinario = new Veterinario(
       nome,
@@ -69,7 +68,6 @@ class ControllerVeterinario {
       telefone,
       crmv,
       consultorio,
-      detalhes
     );
     const veterinarioAtualizado = await VeterinarioDao.findByIdAndUpdate(
       id,

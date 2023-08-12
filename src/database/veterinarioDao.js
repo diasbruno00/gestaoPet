@@ -20,10 +20,7 @@ const VeterinarioDao = new Schema({
   },
   consultorio: {
     type: String,
-  },
-  detalhes: {
-    type: String,
-  },
+  }
 });
 
 module.exports = mongoose.model("Veterinario", VeterinarioDao);
