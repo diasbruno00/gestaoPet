@@ -20,7 +20,7 @@ describe("Organizador", () => {
     expect(organizador).toHaveProperty("horarioAlimentacao", "12:00");
     expect(organizador).toHaveProperty("higiene", "banho diariamente");
     expect(organizador).toHaveProperty(
-      "cuidadeExtresas",
+      "cuidadoExtras",
       "aplicar medicacoa diaramente"
     );
     expect(organizador).toHaveProperty("feddback", "muito bom");
