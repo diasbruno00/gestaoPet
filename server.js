@@ -13,6 +13,7 @@ const porta = 5500
 const middlewares = new Middlewares()
 
 require("dotenv").config()
+const conexao = require('./src/database/conexaoSingleton')
 
 app.use(session({
     secret: "crud",
@@ -20,7 +21,7 @@ app.use(session({
     saveUninitialized: true
 }))
 
-require("./src/database/conexao") // conectanto no mongoDB
+//require("./src/database/conexao") // conectanto no mongoDB
 
 
 app.use(express.json())
