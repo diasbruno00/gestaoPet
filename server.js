@@ -21,8 +21,6 @@ app.use(session({
     saveUninitialized: true
 }))
 
-//require("./src/database/conexao") // conectanto no mongoDB
-
 
 app.use(express.json())
 

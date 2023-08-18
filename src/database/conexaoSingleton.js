@@ -6,7 +6,7 @@ class Database {
     if (!Database.instance) {
       const dbUser = process.env.DB_USER;
       const dbPassword = process.env.DB_PASS;
-      const dbName = "gestaoPet";
+      const dbName = process.env.DB_PASS;
 
       this.connectionString = `mongodb+srv://${dbUser}:${dbPassword}@gestaopet.4ipmrrw.mongodb.net/${dbName}?retryWrites=true&w=majority`;
 
